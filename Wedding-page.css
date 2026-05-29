@@ -9,17 +9,17 @@
   --beige:        #F5EFE6;
   --beige-dark:   #EDE4D8;
   --beige-mid:    #E8DDD0;
-  --black:        #1A1611;
-  --black-soft:   #2C2519;
+  /* --black:        #1A1611; */
+  /* --black-soft:   #2C2519; */
   --charcoal:     #3D3530;
-  --gold:         #B59A72;
+  /* --gold:         #B59A72; */
   --gold-light:   #CDB898;
   --white:        #FDFAF6;
 
   --font-display: 'Playfair Display', 'Georgia', serif;
-  --font-serif:   'Cormorant Garamond', 'Times New Roman', serif;
+  /* --font-serif:   'Cormorant Garamond', 'Times New Roman', serif; */
   --font-body:    'EB Garamond', Georgia, serif;
-  --font-sans:    'Josefin Sans', sans-serif;
+  /* --font-sans:    'Josefin Sans', sans-serif; */
 }
 
 /* ─── Reset ──────────────────────────────────────────── */
