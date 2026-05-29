@@ -1,0 +1,391 @@
+/* ═══════════════════════════════════════════════════════════════
+   PROCESS OF WORKING SECTION — process-section.css
+   
+   Link in <head> after commercial-override.css:
+   <link rel="stylesheet" href="process-section.css" />
+═══════════════════════════════════════════════════════════════ */
+
+/* ── SECTION WRAPPER ─────────────────────────────────────────── */
+#page-commercial .comm-process {
+  width: 100%;
+  background: #0a0a0a;
+  padding: 0 0 100px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* subtle grain texture overlay */
+#page-commercial .comm-process::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── SECTION HEADER ──────────────────────────────────────────── */
+#page-commercial .cp-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 90px clamp(1.5rem, 6vw, 72px) 80px;
+  border-bottom: 1px solid rgba(232,213,183,0.1);
+}
+
+#page-commercial .cp-eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #E8D5B7;
+  display: block;
+  margin-bottom: 1.2rem;
+  opacity: 0.7;
+}
+
+#page-commercial .cp-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  color: #F6E9D8;
+  margin: 0 0 1.8rem;
+}
+
+#page-commercial .cp-sub {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(246,233,216,0.5);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── EACH ROW ────────────────────────────────────────────────── */
+#page-commercial .cp-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  border-bottom: 1px solid rgba(232,213,183,0.07);
+}
+
+/* reversed row: text left, image right */
+#page-commercial .cp-row--reverse {
+  direction: rtl;
+}
+#page-commercial .cp-row--reverse > * {
+  direction: ltr;
+}
+
+/* ── MEDIA PANEL ─────────────────────────────────────────────── */
+#page-commercial .cp-media {
+  position: relative;
+  overflow: hidden;
+}
+
+#page-commercial .cp-media-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+}
+
+#page-commercial .cp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: none;
+  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+#page-commercial .cp-row:hover .cp-img {
+  transform: scale(1.04);
+}
+
+/* big step number watermark on image */
+#page-commercial .cp-step-num {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.8rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1;
+  color: rgba(232,213,183,0.18);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  user-select: none;
+  /* outline text effect */
+  -webkit-text-stroke: 1px rgba(232,213,183,0.3);
+  color: transparent;
+}
+
+/* dark gradient on image so step number reads */
+#page-commercial .cp-media-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,10,10,0.45) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ── TEXT PANEL ──────────────────────────────────────────────── */
+#page-commercial .cp-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+  background: #0a0a0a;
+  position: relative;
+}
+
+/* accent line on inner edge of text panel */
+#page-commercial .cp-text--right::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #E8D5B7, transparent);
+  opacity: 0.3;
+}
+#page-commercial .cp-text--left::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #E8D5B7, transparent);
+  opacity: 0.3;
+}
+
+#page-commercial .cp-tag {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #E8D5B7;
+  display: inline-block;
+  margin-bottom: 1.4rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(232,213,183,0.3);
+}
+
+#page-commercial .cp-step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  line-height: 0.95;
+  color: #F6E9D8;
+  margin: 0 0 1.8rem;
+  letter-spacing: 0.01em;
+}
+#page-commercial .cp-step-title em {
+  font-style: italic;
+  color: #E8D5B7;
+  display: block;
+}
+
+#page-commercial .cp-step-body {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(246,233,216,0.58);
+  margin-bottom: 2rem;
+  max-width: 440px;
+}
+
+/* feature list */
+#page-commercial .cp-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+#page-commercial .cp-features li {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(246,233,216,0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-transform: uppercase;
+}
+#page-commercial .cp-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #E8D5B7;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ── SCROLL REVEAL (uses your existing .reveal class if present) */
+#page-commercial .cp-row {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+#page-commercial .cp-row.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  #page-commercial .cp-row,
+  #page-commercial .cp-row--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    min-height: auto;
+  }
+  #page-commercial .cp-media-inner { min-height: 300px; }
+  #page-commercial .cp-text--right::before,
+  #page-commercial .cp-text--left::before { display: none; }
+  #page-commercial .cp-text {
+    padding: 2.5rem 1.5rem;
+  }
+  #page-commercial .cp-step-body { max-width: 100%; }
+}
+
+@media (max-width: 560px) {
+  #page-commercial .cp-header { padding: 60px 1.5rem 50px; }
+  #page-commercial .cp-media-inner { min-height: 240px; }
+  #page-commercial .cp-step-num { font-size: 4rem; }
+}
+
+
+
+/* Force the section to sit completely below the grid */
+#page-commercial .comm-process {
+  display: block !important;
+  position: relative !important;
+  z-index: 1 !important;
+  clear: both !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow: visible !important;
+}
+ 
+/* Header must not overflow outside its own box */
+#page-commercial .cp-header {
+  position: relative !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  padding: 90px clamp(1.5rem, 6vw, 72px) 80px !important;
+  background: #0a0a0a !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+ 
+/* Title must stay inside header */
+#page-commercial .cp-title {
+  position: relative !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+  font-size: clamp(3rem, 7vw, 6rem) !important; /* reduce size so it fits */
+}
+ 
+/* Sub text */
+#page-commercial .cp-sub {
+  position: relative !important;
+  z-index: 2 !important;
+}
+ 
+#page-commercial .cp-eyebrow {
+  position: relative !important;
+  z-index: 2 !important;
+}
+ 
+/* Each row: relative, not overlapping */
+#page-commercial .cp-row {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  /* fix: rows start invisible but don't collapse height */
+  min-height: 480px !important;
+}
+ 
+/* reversed row */
+#page-commercial .cp-row--reverse {
+  direction: rtl !important;
+}
+#page-commercial .cp-row--reverse > * {
+  direction: ltr !important;
+}
+ 
+/* Media fills its cell completely */
+#page-commercial .cp-media {
+  position: relative !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+#page-commercial .cp-media-inner {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 480px !important;
+  display: block !important;
+}
+#page-commercial .cp-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  filter: none !important;
+}
+ 
+/* Text panel */
+#page-commercial .cp-text {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 4rem) !important;
+  background: #0a0a0a !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #page-commercial .cp-row,
+  #page-commercial .cp-row--reverse {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    min-height: auto !important;
+  }
+  #page-commercial .cp-media-inner {
+    min-height: 280px !important;
+    position: relative !important;
+    height: 280px !important;
+  }
+  #page-commercial .cp-img {
+    position: absolute !important;
+    inset: 0 !important;
+  }
+}
+ 

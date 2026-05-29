@@ -1,0 +1,183 @@
+ 
+/* ── FIX 1: black gap between approach and grid section ──────── */
+#page-commercial .comm-approach {
+  margin-bottom: 0 !important;
+  padding-bottom: clamp(4rem, 10vh, 8rem) !important;
+}
+ 
+/* ── FIX 2: grid section — force black, no gap at top ───────── */
+#page-commercial .video-grid-section {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  margin: 0 !important;
+  padding-top: 60px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+ 
+/* ── FIX 3: "SELECTED WORK" title — white ────────────────────── */
+#page-commercial .comm-grid-title {
+  color: #F6E9D8 !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  line-height: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+ 
+/* ── FIX 4: grid — zero gap, black fill between cards ───────── */
+#page-commercial .video-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;           /* ZERO gap */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #0a0a0a !important;
+  width: 100% !important;
+}
+ 
+/* ── FIX 5: all cards — no gap, flush ───────────────────────── */
+#page-commercial .video-card {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  background: #0a0a0a !important;
+}
+ 
+/* ── FIX 6: FULL COLOUR images — remove ALL filters ─────────── */
+#page-commercial .video-thumb,
+#page-commercial .video-card .video-thumb,
+#page-commercial .video-card:hover .video-thumb,
+#page-commercial .video-card.vc-featured .video-thumb,
+#page-commercial .video-grid .video-thumb,
+#page-commercial .video-grid-section .video-thumb {
+  filter: none !important;
+  -webkit-filter: none !important;
+  /* grayscale: 0 !important; */
+}
+ 
+/* only on hover — very slight dim, no colour change */
+#page-commercial .video-card:hover .video-thumb {
+  filter: brightness(0.88) !important;
+  -webkit-filter: brightness(0.88) !important;
+  transform: scale(1.03) !important;
+}
+ 
+/* ── FIX 7: featured card thumb fills its 2×2 cell fully ─────── */
+#page-commercial .video-card.vc-featured {
+  grid-column: 1 / 3 !important;
+  grid-row: 1 / 3 !important;
+}
+#page-commercial .video-card.vc-featured .video-thumb {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  min-height: 420px !important;
+  max-height: 540px !important;
+  object-fit: cover !important;
+  display: block !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+ 
+/* ── FIX 8: side cards match featured height ─────────────────── */
+#page-commercial .video-card.vc-tr,
+#page-commercial .video-card.vc-mr {
+  display: flex !important;
+  flex-direction: column !important;
+}
+#page-commercial .video-card.vc-tr .video-thumb,
+#page-commercial .video-card.vc-mr .video-thumb {
+  flex: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  min-height: 207px !important;  /* half of featured min-height */
+  object-fit: cover !important;
+}
+ 
+/* ── FIX 9: bottom row cards ─────────────────────────────────── */
+#page-commercial .video-card.vc-b1,
+#page-commercial .video-card.vc-b2,
+#page-commercial .video-card.vc-b3 {
+  grid-row: 3 !important;
+}
+#page-commercial .video-card.vc-b1 .video-thumb,
+#page-commercial .video-card.vc-b2 .video-thumb,
+#page-commercial .video-card.vc-b3 .video-thumb {
+  aspect-ratio: 4/3 !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+ 
+/* ── FIX 10: lone card ───────────────────────────────────────── */
+#page-commercial .video-card.vc-lone {
+  grid-column: 1/2 !important;
+  grid-row: 4 !important;
+}
+#page-commercial .video-card.vc-lone .video-thumb {
+  aspect-ratio: 4/3 !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+ 
+/* ── FIX 11: overlay & text ──────────────────────────────────── */
+#page-commercial .video-card-body { display: none !important; }
+ 
+#page-commercial .play-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  padding: 1.4rem 1.6rem !important;
+  background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.2) 50%, transparent 100%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.35s !important;
+  pointer-events: none !important;
+}
+#page-commercial .video-card.vc-featured .play-overlay { opacity: 1 !important; }
+#page-commercial .video-card:hover .play-overlay       { opacity: 1 !important; }
+ 
+#page-commercial .video-card-cat {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 0.5rem !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  color: #E8D5B7 !important;
+  opacity: 0.75 !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+#page-commercial .video-card-title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #F6E9D8 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.03em !important;
+  display: block !important;
+}
+#page-commercial .play-btn { display: none !important; }
+ 
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  #page-commercial .video-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  #page-commercial .video-card.vc-featured { grid-column: 1/3 !important; grid-row: 1 !important; }
+  #page-commercial .video-card.vc-tr,
+  #page-commercial .video-card.vc-mr,
+  #page-commercial .video-card.vc-b1,
+  #page-commercial .video-card.vc-b2,
+  #page-commercial .video-card.vc-b3,
+  #page-commercial .video-card.vc-lone { grid-column: auto !important; grid-row: auto !important; }
+  #page-commercial .video-card.vc-featured .video-thumb { min-height: 280px !important; max-height: 340px !important; }
+  #page-commercial .video-card.vc-tr .video-thumb,
+  #page-commercial .video-card.vc-mr .video-thumb { min-height: 140px !important; aspect-ratio: 4/3 !important; height: auto !important; }
+}
+@media (max-width: 560px) {
+  #page-commercial .video-grid { grid-template-columns: 1fr !important; }
+  #page-commercial .video-card.vc-featured { grid-column: 1 !important; }
+  #page-commercial .video-card.vc-featured .video-thumb { min-height: 220px !important; aspect-ratio: 16/9 !important; height: auto !important; }
+}

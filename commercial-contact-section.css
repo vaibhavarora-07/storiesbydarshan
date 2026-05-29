@@ -1,0 +1,250 @@
+
+/* ── SECTION WRAPPER ─────────────────────────────────────────── */
+#page-commercial .comm-contact {
+  width: 100%;
+  background: #0d0d0d;
+  border-top: 1px solid rgba(232,213,183,0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* faint accent diagonal line in background */
+#page-commercial .comm-contact::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 38%;
+  width: 1px;
+  height: 140%;
+  background: linear-gradient(to bottom, transparent, rgba(232,213,183,0.12), transparent);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+/* ── LEFT COLUMN ─────────────────────────────────────────────── */
+#page-commercial .cc-left {
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+#page-commercial .cc-eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #E8D5B7;
+  display: block;
+  margin-bottom: 1.4rem;
+  opacity: 0.7;
+}
+
+#page-commercial .cc-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: #F6E9D8;
+  margin: 0 0 2rem;
+}
+#page-commercial .cc-title em {
+  font-style: italic;
+  color: #E8D5B7;
+  display: block;
+}
+
+#page-commercial .cc-tagline {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(246,233,216,0.5);
+  max-width: 340px;
+  margin-bottom: 3rem;
+}
+
+#page-commercial .cc-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.4rem;
+}
+#page-commercial .cc-detail-label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(232,213,183,0.45);
+}
+#page-commercial .cc-detail-val {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #F6E9D8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#page-commercial .cc-detail-val:hover { color: #E8D5B7; }
+
+/* ── RIGHT COLUMN ────────────────────────────────────────────── */
+#page-commercial .cc-right {
+  background: #111;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#page-commercial .cc-form-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* two fields side by side */
+#page-commercial .cc-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+#page-commercial .cc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#page-commercial .cc-label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(232,213,183,0.5);
+}
+
+/* all inputs, select, textarea share this base */
+#page-commercial .cc-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(232,213,183,0.2);
+  padding: 0.7rem 0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: #F6E9D8;
+  outline: none;
+  transition: border-color 0.25s;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+#page-commercial .cc-input::placeholder { color: rgba(246,233,216,0.25); }
+#page-commercial .cc-input:focus { border-bottom-color: #E8D5B7; }
+
+/* select arrow */
+#page-commercial .cc-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E8D5B7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 1.5rem;
+}
+#page-commercial .cc-select option {
+  background: #111;
+  color: #F6E9D8;
+}
+
+/* textarea */
+#page-commercial .cc-textarea {
+  resize: none;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* ── SUBMIT BUTTON ───────────────────────────────────────────── */
+#page-commercial .cc-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  align-self: flex-start;
+  padding: 1rem 2.4rem;
+  background: #E8D5B7;
+  color: #0a0a0a;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 2px solid #E8D5B7;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, gap 0.22s;
+  margin-top: 0.5rem;
+}
+#page-commercial .cc-submit:hover {
+  background: transparent;
+  color: #E8D5B7;
+  gap: 1.2rem;
+}
+#page-commercial .cc-submit-arrow {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* success state */
+#page-commercial .cc-submit.cc-sent {
+  background: transparent;
+  border-color: rgba(232,213,183,0.4);
+  color: rgba(232,213,183,0.6);
+  cursor: default;
+  pointer-events: none;
+}
+
+#page-commercial .cc-privacy {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(246,233,216,0.25);
+  margin: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  #page-commercial .comm-contact {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  #page-commercial .cc-right {
+    padding-top: 0;
+  }
+  #page-commercial .cc-tagline { max-width: 100%; }
+}
+@media (max-width: 560px) {
+  #page-commercial .cc-field-row {
+    grid-template-columns: 1fr;
+  }
+  #page-commercial .cc-left,
+  #page-commercial .cc-right {
+    padding: 3rem 1.5rem;
+  }
+}

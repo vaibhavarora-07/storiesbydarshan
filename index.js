@@ -210,15 +210,154 @@ function toggleMobile() {
   }
 }
 
-/* ─── WEDDING TABS ─── */
-function switchWeddingTab(tab, btn) {
-  document.querySelectorAll('.wedding-tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.wedding-tab-content').forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('wedding-' + tab).classList.add('active');
-  ScrollTrigger.refresh();
-  initScrollAnimations();
-}
+/* ═══════════════════════════════════════════════════════
+   STORIES BY DARSHAN — Wedding Films Page
+   wedding-films.js  (v2)
+═══════════════════════════════════════════════════════ */
+'use strict';
+
+/* ──────────────────────────────────────────────────────
+   1. HERO — poster fallback when video file missing
+────────────────────────────────────────────────────── */
+(function () {
+  const vid = document.querySelector('.hero__video');
+  if (!vid) return;
+  vid.addEventListener('error', () => { vid.style.display = 'none'; });
+  vid.play().catch(() => {});
+})();
+
+
+/* ──────────────────────────────────────────────────────
+   2. SCROLL REVEAL — IntersectionObserver
+────────────────────────────────────────────────────── */
+(function () {
+  const els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10 });
+  els.forEach(el => io.observe(el));
+})();
+
+
+/* ──────────────────────────────────────────────────────
+   3. WORKS CAROUSEL — ultra-smooth rAF-based infinite scroll
+   Strategy:
+   · Clone the card set once in JS (so HTML stays clean — no manual duplication needed)
+   · Drive translateX via requestAnimationFrame for perfectly smooth motion
+   · Pause on hover/touch; resume on leave
+────────────────────────────────────────────────────── */
+(function () {
+  const track = document.getElementById('worksTrack');
+  if (!track) return;
+
+  /* ── Clone children for seamless loop ── */
+  const originals = Array.from(track.children);
+  originals.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  /* Tell CSS we're taking over animation */
+  track.classList.add('js-driven');
+
+  const SPEED = 0.55; /* pixels per frame at 60fps ≈ 33px/s — very smooth & slow */
+  let x = 0;
+  let paused = false;
+  let rafId;
+
+  function getHalfWidth() {
+    /* half of total track (originals only) */
+    return track.scrollWidth / 2;
+  }
+
+  function tick() {
+    if (!paused) {
+      x -= SPEED;
+      const half = getHalfWidth();
+      if (Math.abs(x) >= half) {
+        x = 0; /* seamless reset */
+      }
+      track.style.transform = `translateX(${x}px)`;
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  rafId = requestAnimationFrame(tick);
+
+  /* Pause on hover */
+  track.addEventListener('mouseenter', () => { paused = true; });
+  track.addEventListener('mouseleave', () => { paused = false; });
+
+  /* Pause on touch */
+  let touchX = 0;
+  track.addEventListener('touchstart', e => {
+    touchX = e.touches[0].clientX;
+    paused = true;
+  }, { passive: true });
+  track.addEventListener('touchend', () => {
+    paused = false;
+  }, { passive: true });
+
+  /* Pause when tab hidden */
+  document.addEventListener('visibilitychange', () => {
+    paused = document.hidden;
+  });
+})();
+
+
+/* ──────────────────────────────────────────────────────
+   4. CINEMA VIDEO — fallback poster
+────────────────────────────────────────────────────── */
+(function () {
+  const vid = document.querySelector('.cinema__video');
+  if (!vid) return;
+  vid.addEventListener('error', () => { vid.style.display = 'none'; });
+  vid.play().catch(() => {});
+})();
+
+
+/* ──────────────────────────────────────────────────────
+   5. LAZY VIDEO PLAY via IntersectionObserver
+   (Mosaic & any in-page videos play only when visible)
+────────────────────────────────────────────────────── */
+(function () {
+  const videos = document.querySelectorAll('video:not(.hero__video):not(.cinema__video)');
+  if (!videos.length) return;
+  const vio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.play().catch(() => {});
+      } else {
+        e.target.pause();
+      }
+    });
+  }, { threshold: 0.15 });
+  videos.forEach(v => vio.observe(v));
+})();
+
+
+/* ──────────────────────────────────────────────────────
+   6. SMOOTH ANCHOR SCROLL
+────────────────────────────────────────────────────── */
+(function () {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
 
 /* ─── FAQ ─── */
 function toggleFaq(el) {
@@ -281,3 +420,59 @@ document.addEventListener('DOMContentLoaded', () => {
   if (preLogo && typeof LOGO_LIGHT !== 'undefined') preLogo.src = LOGO_LIGHT;
   initScrollAnimations();
 });
+
+// COMMERCIAL PAGE { SOUND BOX }
+(function () {
+  var video    = document.getElementById('commHeroVideo');
+  var muteBtn  = document.getElementById('commMuteBtn');
+  var muteLbl  = document.getElementById('commMuteLbl');
+  var muteIcon = document.getElementById('commMuteIcon');
+ 
+  var PATH_OFF = 'M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z';
+  var PATH_ON  = 'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z';
+ 
+  if (muteBtn && video) {
+    muteBtn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      muteIcon.innerHTML = '<path d="' + (video.muted ? PATH_OFF : PATH_ON) + '"/>';
+      muteLbl.textContent = video.muted ? 'Sound Off' : 'Sound On';
+    });
+  }
+ 
+  /* smooth scroll for "View Our Work" */
+  document.querySelectorAll('#page-commercial a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+ 
+  /* pause video when user navigates away from this page */
+  if (video) {
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? video.pause() : video.play();
+    });
+  }
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   PROCESS SECTION — Scroll Reveal JS
+   Paste this into your existing main JS file,
+   OR add a <script> tag before </body>
+═══════════════════════════════════════════════════════════════ */
+(function () {
+  var rows = document.querySelectorAll('#page-commercial .cp-row');
+  if (!rows.length) return;
+ 
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  }, { threshold: 0.12 });
+ 
+  rows.forEach(function (row) { observer.observe(row); });
+})();
+
