@@ -115,7 +115,7 @@ body.is-ready #preloader { display:none !important; pointer-events:none; }
   top:0; 
   left:0; 
   width:100%;
-  height:var(--nav-h);
+  height: 72px;;
   display:flex; 
   align-items:center;
   /* justify-content:space-between; */
@@ -128,16 +128,26 @@ body.is-ready #preloader { display:none !important; pointer-events:none; }
 #navbar.dark-nav.scrolled { background:rgba(246,233,216,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(200,185,165,0.25); }
 #navbar.light-nav { background:rgba(246,233,216,0.93); backdrop-filter:blur(10px); border-bottom:1px solid rgba(200,185,165,0.3); }
 
-.nav-logo { display: flex; align-items: center;flex-shrink: 0; }
 .nav-logo img {
-  width: 260px;      
-  height: auto;
+  width: auto;
+  height: 60px;
   display: block;
   object-fit: contain;
-  max-width: none;
+  object-position: left center;
+  max-width: 220px;
 }
-.dark-nav .nav-logo img { content: url('light_logo_transperent_2.png'); }
-.light-nav .nav-logo img { content: url('light_logo_transperent_2.png'); }
+/* .dark-nav .nav-logo img {
+  content: url('light_logo_transperent_2.png');
+  height: 64px !important;
+  width: auto !important;
+}
+.light-nav .nav-logo img {
+  content: url('dark_logo_transperent.png');
+  height: 64px !important;
+  width: auto !important;
+} */
+
+
 
 /* .nav-links {
   position: absolute;
@@ -2196,3 +2206,18 @@ footer.site-footer {
   }
 }
  
+
+
+
+
+
+
+/* Force navbar logo size — highest specificity */
+nav#navbar a#navLogo img#navLogoImg {
+  height: 70px !important;
+  width: auto !important;
+  min-width: 150px;
+  max-width: 250px;
+  display: block !important;
+  object-fit: contain;
+}
