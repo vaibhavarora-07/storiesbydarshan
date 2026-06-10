@@ -1,3 +1,9 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+
 function bootGsap() {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -138,15 +144,17 @@ window.addEventListener('scroll', () => {
 const darkBgPages = ['home','commercial','wedding'];
 
 function navigateTo(page) {
+  // window.scrollTo(0, 0); 
   if (page === currentPage) return;
   if (typeof gtag !== 'undefined') gtag('event','page_view',{page_path:'/'+page});
   const outEl = document.getElementById('page-' + currentPage);
   const inEl  = document.getElementById('page-' + page);
   gsap.to(outEl, { opacity:0, duration:0.3, onComplete: () => {
     outEl.classList.remove('active');
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     inEl.classList.add('active');
     inEl.style.opacity = 0;
-    window.scrollTo(0,0);
     gsap.to(inEl, { opacity:1, duration:0.4, ease:'power2.out' });
     currentPage = page;
     updateNavLinks(page);
@@ -267,7 +275,8 @@ function toggleMobile() {
   /* Tell CSS we're taking over animation */
   track.classList.add('js-driven');
 
-  const SPEED = 0.55; /* pixels per frame at 60fps ≈ 33px/s — very smooth & slow */
+  const SPEED = 0.55;
+  let SPEED_DIR = -1; /* -1 = left (default), 1 = right */
   let x = 0;
   let paused = false;
   let rafId;
@@ -279,10 +288,14 @@ function toggleMobile() {
 
   function tick() {
     if (!paused) {
-      x -= SPEED;
+      x += SPEED * SPEED_DIR;
       const half = getHalfWidth();
-      if (Math.abs(x) >= half) {
-        x = 0; /* seamless reset */
+          /* Loop in BOTH directions */
+      if (x <= -half) {
+        x = 0;           /* scrolled too far left — reset */
+      }
+      if (x > 0) {
+        x = -half + 1;   /* scrolled too far right — jump to end */
       }
       track.style.transform = `translateX(${x}px)`;
     }
@@ -292,8 +305,35 @@ function toggleMobile() {
   rafId = requestAnimationFrame(tick);
 
   /* Pause on hover */
-  track.addEventListener('mouseenter', () => { paused = true; });
-  track.addEventListener('mouseleave', () => { paused = false; });
+  // track.addEventListener('mouseenter', () => { paused = true; });
+  // track.addEventListener('mouseleave', () => { paused = false; });
+
+  const wrap = track.closest('.works__carousel-wrap') || track.parentElement;
+
+wrap.addEventListener('mousemove', (e) => {
+  const rect = wrap.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const edgeZone = rect.width * 0.12; /* 12% from each edge */
+
+  if (x < edgeZone) {
+    paused = false;
+    SPEED_DIR = 1; /* scroll right (reverse) */
+  } else if (x > rect.width - edgeZone) {
+    paused = false;
+    SPEED_DIR = -1; /* scroll left (normal) */
+  } else {
+    paused = true;
+    SPEED_DIR = -1;
+  }
+});
+
+wrap.addEventListener('mouseleave', () => {
+  paused = false;
+  SPEED_DIR = -1;
+});
+
+
+
 
   /* Pause on touch */
   let touchX = 0;
@@ -359,6 +399,61 @@ function toggleMobile() {
   });
 })();
 
+
+
+
+
+
+
+
+/* ── YouTube inline card player ── */
+function closeYTCard(wrap) {
+  const iframe = wrap.querySelector('iframe');
+  if (!iframe) return;
+  iframe.remove();
+  wrap.querySelector('img').classList.remove('hidden');
+  wrap.querySelector('.work-card__play').classList.remove('hidden');
+}
+
+function openYTCard(card) {
+  const wrap = card.querySelector('.work-card__img-wrap');
+  const ytId = wrap.getAttribute('data-yt-id');
+  if (!ytId) return;
+
+  /* If already playing this card — clicking again closes it */
+  if (wrap.querySelector('iframe')) {
+    closeYTCard(wrap);
+    return;
+  }
+
+  /* Close ANY other card that is currently playing */
+  document.querySelectorAll('.work-card__img-wrap iframe').forEach(existingIframe => {
+    closeYTCard(existingIframe.closest('.work-card__img-wrap'));
+  });
+
+  /* Hide thumbnail and play button */
+  wrap.querySelector('img').classList.add('hidden');
+  wrap.querySelector('.work-card__play').classList.add('hidden');
+
+  /* Pause the carousel while video plays */
+  const track = document.getElementById('worksTrack');
+  if (track) track.dispatchEvent(new MouseEvent('mouseenter'));
+
+  /* Inject YouTube iframe */
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${window.location.origin}`;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.allowFullscreen = true;
+  wrap.appendChild(iframe);
+}
+
+
+
+
+
+
+
+
 /* ─── FAQ ─── */
 function toggleFaq(el) {
   const item = el.parentElement;
@@ -421,6 +516,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
 });
 
+
+
+
+
+
+
+
 // COMMERCIAL PAGE { SOUND BOX }
 (function () {
   var video    = document.getElementById('commHeroVideo');
@@ -476,3 +578,17 @@ document.addEventListener('DOMContentLoaded', () => {
   rows.forEach(function (row) { observer.observe(row); });
 })();
 
+
+
+/* ── Navbar blur on scroll ── */
+(function () {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+})();
