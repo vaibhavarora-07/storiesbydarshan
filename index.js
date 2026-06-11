@@ -421,6 +421,51 @@ function closeYTCard(wrap) {
   wrap.querySelector('.work-card__play').classList.remove('hidden');
 }
 
+
+
+
+
+/* ── Commercial grid card player ── */
+function closeCommCard(wrap) {
+  const iframe = wrap.querySelector('iframe');
+  if (!iframe) return;
+  iframe.remove();
+  wrap.querySelector('img').classList.remove('hidden');
+  wrap.querySelector('.vc-play').classList.remove('hidden');
+}
+
+function openCommCard(card) {
+  const wrap = card.querySelector('.vc-img-wrap');
+  const ytId = wrap.getAttribute('data-yt-id');
+  if (!ytId) return;
+
+  /* Toggle off if already playing */
+  if (wrap.querySelector('iframe')) {
+    closeCommCard(wrap);
+    return;
+  }
+
+  /* Close any other playing card */
+  document.querySelectorAll('#page-commercial .vc-img-wrap iframe').forEach(existing => {
+    closeCommCard(existing.closest('.vc-img-wrap'));
+  });
+
+  /* Hide thumbnail and play icon */
+  wrap.querySelector('img').classList.add('hidden');
+  wrap.querySelector('.vc-play').classList.add('hidden');
+
+  /* Inject iframe */
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${window.location.origin}`;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.allowFullscreen = true;
+  wrap.appendChild(iframe);
+}
+
+
+
+
+
 function openYTCard(card) {
   const wrap = card.querySelector('.work-card__img-wrap');
   const ytId = wrap.getAttribute('data-yt-id');
