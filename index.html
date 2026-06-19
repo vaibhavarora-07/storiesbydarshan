@@ -8,6 +8,11 @@
 <meta name="keywords" content="freelance video editor India, wedding videographer, commercial video editor, brand film editor, StoriesByDarshan, Darshan Agrawal">
 <link rel="canonical" href="https://storiesbydarshan.vercel.app/">
 
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+
 <link rel="stylesheet" href="commercial.css" />
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
@@ -29,7 +34,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="index 01.css">
 <link rel="stylesheet" href="Wedding-page.css" />
 <link rel="stylesheet" href="commercial-override.css" />
 <link rel="stylesheet" href="process-section.css" />
@@ -61,7 +66,7 @@
   <ul class="nav-links">
     <li><a href="#" onclick="navigateTo('home');return false;" data-page="home">Home</a></li>
     <li><a href="#" onclick="navigateTo('commercial');return false;" data-page="commercial">Commercial storytelling</a></li>
-    <li><a href="#" onclick="navigateTo('wedding');return false;" data-page="wedding">Wedding Films</a></li>
+    <!-- <li><a href="#" onclick="navigateTo('wedding');return false;" data-page="wedding">Wedding Films</a></li> -->
     <li><a href="#" onclick="navigateTo('contact');return false;" data-page="contact">Contact</a></li>
     <li><a href="#" onclick="navigateTo('about');return false;" data-page="about">About</a></li>
   </ul>
@@ -96,217 +101,347 @@
 ═══════════════════════════════════════ -->
 <div class="page active" id="page-home">
 
-  <!-- Hero Slideshow -->
-  <!-- Hero Video -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline
-    poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80">
-    <source src="Videos/Hero page.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
-
-  <!-- Removed: hero-slides, hero-dots, hero-content -->
-
-  <!-- Bottom text strip -->
-<!-- Bottom text strip -->
-  <div class="hero-bottom-strip">
-    <span class="hero-strip-name">STORIES BY DARSHAN</span>
-    <div class="hero-strip-roles">
-      <span class="hero-strip-role">Filmmaker</span>
-      <span class="hero-strip-divider">·</span>
-      <span class="hero-strip-role">Video Editor</span>
-      <span class="hero-strip-divider">·</span>
-      <span class="hero-strip-role">Storyteller</span>
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span>Now booking June projects</div>
+      <h1 class="hero-title">Edits That Make<br/>Brands <em>Unforgettable.</em></h1>
+      <p class="hero-sub">Commercial films, brand stories, and product content for businesses who want their footage to feel cinematic, not just cut.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-solid">View Work ↓</a>
+        <a href="#cta" class="btn-outline">Book a Call</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="proof-avatars">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""/></div>
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80" alt=""/></div>
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=100&q=80" alt=""/></div>
+        </div>
+        <span class="proof-text"><strong>50+</strong> brands trusted us</span>
+      </div>
     </div>
-  </div>
-  <!-- Keep social links -->
-  <div class="hero-social-left">
-    <a href="https://www.instagram.com/storiesby_darshan" target="_blank">Instagram</a>
-    <a href="https://youtube.com/@storiesbydarshan" target="_blank">YouTube</a>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <!-- PLACEHOLDER: replace src with your real hero reel -->
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=900&q=80">
+          <source src="REPLACE_WITH_HERO_VIDEO.mp4" type="video/mp4"/>
+        </video>
+        <div class="hero-frame-tag"><span>Hotel Aura — Brand Film</span><span class="play-dot"></span></div>
+      </div>
+      <div class="hero-chip chip-1"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=200&q=80" alt=""/></div>
+      <div class="hero-chip chip-2"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=200&q=80" alt=""/></div>
+      <div class="hero-chip chip-3"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt=""/></div>
+    </div>
   </div>
 </section>
 
-  <!-- Stats / Experience -->
-  <section class="stats-section">
-    <p class="stats-intro reveal">"Working across destination projects and remote collaborations from Udaipur to Mumbai and beyond."</p>
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="35" data-suffix="+">0</div>
-        <div class="stat-label">Wedding Projects</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="50" data-suffix="+">0</div>
-        <div class="stat-label">Commercial Edits</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="3" data-suffix="+">0</div>
-        <div class="stat-label">Years of Storytelling</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="25" data-suffix="+">0</div>
-        <div class="stat-label">Client Collaborations</div>
-      </div>
-      <!-- <div class="stat-item reveal">
-        <div class="stat-num">42</div>
-        <div class="stat-label">Engagements</div>
-      </div> -->
+<!-- ═══ MARQUEE ═══ -->
+<div id="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="star">✦</span>Hotel Aura</div>
+    <div class="marquee-item"><span class="star">✦</span>Olive Bar</div>
+    <div class="marquee-item"><span class="star">✦</span>Zara India</div>
+    <div class="marquee-item"><span class="star">✦</span>TechCorp</div>
+    <div class="marquee-item"><span class="star">✦</span>Luxe Resort</div>
+    <div class="marquee-item"><span class="star">✦</span>Craft Brewery</div>
+    <div class="marquee-item"><span class="star">✦</span>Café Noir</div>
+    <div class="marquee-item"><span class="star">✦</span>Hotel Aura</div>
+    <div class="marquee-item"><span class="star">✦</span>Olive Bar</div>
+    <div class="marquee-item"><span class="star">✦</span>Zara India</div>
+    <div class="marquee-item"><span class="star">✦</span>TechCorp</div>
+    <div class="marquee-item"><span class="star">✦</span>Luxe Resort</div>
+    <div class="marquee-item"><span class="star">✦</span>Craft Brewery</div>
+    <div class="marquee-item"><span class="star">✦</span>Café Noir</div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT + STATS ═══ -->
+<section class="section">
+  <div id="about">
+    <div class="about-media reveal">
+      <img src="Images/image.png" alt="Darshan"/>
     </div>
-  </section>
-
-
-  <!-- Marriage Images + Quotes Side Section -->
-  <section class="marriage-split-section">
-    <div class="marriage-split-inner">
-      <div class="marriage-images-col">
-        <div class="marriage-img-stack">
-          <img class="marriage-img marriage-img-1" src="Images/card-3.webp" alt="Wedding moment" loading="lazy">
-          <img class="marriage-img marriage-img-2" src="Images/card-5.webp" alt="Wedding moment" loading="lazy">
-        </div>
+    <div class="reveal d1">
+      <div class="section-tag">About Me</div>
+      <h3 class="about-name">Darshan Agrawal</h3>
+      <p class="about-bio">I'm a commercial filmmaker and editor focused on helping brands turn raw footage into content people actually stop scrolling for. Over the past few years I've worked with hotels, restaurants, and growing businesses — crafting films built around story, pacing, and visual identity.</p>
+      <p class="about-bio">My approach blends cinematic colour, intentional sound design, and platform-native pacing, so every film feels polished, on-brand, and built to perform.</p>
+      <div class="about-socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 015 0V17"/></svg></a>
       </div>
-      <div class="marriage-quotes-col">
-        <span class="section-label reveal">Love Stories</span>
-        <h2 class="section-heading reveal">Every Frame<br><em>Is a Memory</em></h2>
-        <div class="marriage-quote-list">
-          <blockquote class="marriage-quote reveal">
-            <p>"Two souls, one story — we make sure every chapter is preserved forever."</p>
-          </blockquote>
-          <blockquote class="marriage-quote reveal">
-            <p>"Your wedding is a film waiting to be told. We bring it to life."</p>
-          </blockquote>
-          <blockquote class="marriage-quote reveal">
-            <p>"From the first look to the last dance — nothing is too small to be beautiful."</p>
-          </blockquote>
-        </div>
-        <a href="#" class="marriage-cta reveal" onclick="navigateTo('wedding');return false;">View Wedding Films →</a>
+      <div class="stats-row">
+        <div><div class="stat-num" data-count="120">0</div><div class="stat-label">Films Delivered</div></div>
+        <div><div class="stat-num" data-count="5">0</div><div class="stat-label">Years Editing</div></div>
+        <div><div class="stat-num" data-count="98">0</div><div class="stat-label">% Happy Clients</div></div>
+        <div><div class="stat-num" data-count="50">0</div><div class="stat-label">Brands Supported</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-<!-- Published -->
-  <section class="published-section">
-    <div class="published-header reveal">
-      <h2 class="published-title">Published</h2>
-      <span class="published-sub">Most Reads</span>
+<!-- ═══ PROCESS ═══ -->
+<section id="process" class="section">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Process</div>
+      <h2 class="section-title">From Raw Footage<br/>to <em>Final Cut.</em></h2>
     </div>
-    <div class="published-grid">
-      <div class="published-row published-row--top">
-        <article class="pub-item pub-item--tall reveal">
-          <a href="#" onclick="navigateTo('commercial');return false;" class="pub-media">
-            <img src="Images/2.jpeg" alt="Luxury resort brand film" loading="lazy">
-            <span class="pub-badge">VOGUE</span>
-          </a>
-          <h3 class="pub-name">Cinematic brand stories that define luxury hospitality</h3>
-          <p class="pub-source">Featured in Vogue India</p>
-        </article>
-        <article class="pub-item pub-item--wide reveal">
-          <a href="#" onclick="navigateTo('commercial');return false;" class="pub-media">
-            <img src="Images/Youtube Thumbnail design.jfif" alt="Restaurant commercial film" loading="lazy">
-            <span class="pub-badge">Long Form</span>
-          </a>
-          <h3 class="pub-name">How visual storytelling is reshaping restaurant marketing</h3>
-          <p class="pub-source">Read the feature in Harper's Bazaar</p>
-        </article>
-      </div>
-      <div class="published-row published-row--bottom">
-        <article class="pub-item reveal">
-          <a href="#" onclick="navigateTo('commercial');return false;" class="pub-media">
-            <img src="Images/4.webp" alt="Corporate brand film" loading="lazy">
-            <span class="pub-badge">FORBES</span>
-          </a>
-          <h3 class="pub-name">The rise of cinematic corporate films in India</h3>
-          <p class="pub-source">Featured in Forbes India</p>
-        </article>
-        <article class="pub-item reveal">
-          <a href="#" onclick="navigateTo('commercial');return false;" class="pub-media">
-            <img src="Images/5.webp" alt="Event film production" loading="lazy">
-            <span class="pub-badge">PEOPLE</span>
-          </a>
-          <h3 class="pub-name">Behind the lens: crafting emotion in event films</h3>
-          <p class="pub-source">Read the feature in People Magazine</p>
-        </article>
-        <article class="pub-item reveal">
-          <a href="#" onclick="navigateTo('commercial');return false;" class="pub-media">
-            <img src="Images/6.webp" alt="Hospitality video edit" loading="lazy">
-            <span class="pub-badge">CONDÉ NAST</span>
-          </a>
-          <h3 class="pub-name">Editor's pick: films that make brands unforgettable</h3>
-          <p class="pub-source">Featured in Condé Nast Traveller</p>
-        </article>
-      </div>
+    <p class="section-desc">A clear, structured workflow from first upload to delivered film.</p>
+  </div>
+
+  <div class="process-row">
+    <div class="process-item reveal">
+      <div class="process-num">01</div>
+      <div><div class="process-text-title">Footage <em>Received</em></div><p class="process-text-desc">Drop your raw footage into our shared drive — no fuss, no formatting requirements.</p></div>
     </div>
-  </section>
+    <div class="process-item reveal d1">
+      <div class="process-num">02</div>
+      <div><div class="process-text-title">Edit & <em>Story</em></div><p class="process-text-desc">We build pacing, sound design, colour, and motion around the story your brand needs to tell.</p></div>
+    </div>
+    <div class="process-item reveal d2">
+      <div class="process-num">03</div>
+      <div><div class="process-text-title">Revisions</div><p class="process-text-desc">Two structured rounds of revisions so the final film matches your vision exactly.</p></div>
+    </div>
+    <div class="process-item reveal d3">
+      <div class="process-num">04</div>
+      <div><div class="process-text-title">Delivery & <em>Launch</em></div><p class="process-text-desc">Full-resolution files, platform-optimised and ready to publish, handed off on schedule.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Quote -->
-  <section class="home-quote">
-    <blockquote class="reveal">"Turning footage into stories that feel cinematic, emotional and unforgettable."</blockquote>
-    <cite class="reveal">— Darshan Agrawal &nbsp;·&nbsp; StoriesByDarshan</cite>
-  </section>
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Services</div>
+      <h2 class="section-title">What We <em>Craft</em></h2>
+    </div>
+    <p class="section-desc">Everything a brand needs to turn raw footage into a film people remember.</p>
+  </div>
 
+  <div class="svc-carousel-wrap reveal d1">
+    <div class="svc-carousel" id="svcCarousel">
+      <div class="svc-card">
+        <div class="svc-media">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
+            <source src="REPLACE_WITH_SERVICE_VIDEO_1.mp4" type="video/mp4"/>
+          </video>
+          <div class="svc-media-badge">Brand Films</div>
+        </div>
+        <div class="svc-body">
+          <h3 class="svc-name">Commercial Brand Films</h3>
+          <p class="svc-desc">Cinematic brand stories for hotels, restaurants, and businesses — built around pacing, sound, and visual identity that audiences remember.</p>
+          <a href="#cta" class="svc-link">Book Edit →</a>
+        </div>
+      </div>
 
-  <!-- Most Loved Commercial Works — Grid Section -->
-  <section class="most-loved-section">
-    <h2 class="most-loved-title reveal">Our Most Loved<br><em>Commercial Works</em></h2>
-    <div class="most-loved-grid">
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_4','Hotel Aura — Brand Experience Film')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Comm-01.jfif" alt="Hotel Film" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
+      <div class="svc-card">
+        <div class="svc-media">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=700&q=80">
+            <source src="REPLACE_WITH_SERVICE_VIDEO_2.mp4" type="video/mp4"/>
+          </video>
+          <div class="svc-media-badge">Social Reels</div>
         </div>
-        <p class="most-loved-label">Hotel & Restaurant</p>
-        <p class="most-loved-name">Hotel Aura — Brand Experience</p>
+        <div class="svc-body">
+          <h3 class="svc-name">Short-Form Campaign Reels</h3>
+          <p class="svc-desc">Instagram and YouTube-native cuts engineered for retention — strong hooks, fast pacing, and platform-correct framing.</p>
+          <a href="#cta" class="svc-link">Book Edit →</a>
+        </div>
       </div>
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_5','Artisan Café — Lifestyle Reel')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Comm-02.jfif" alt="Café Film" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
+
+      <div class="svc-card">
+        <div class="svc-media">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80">
+            <source src="REPLACE_WITH_SERVICE_VIDEO_3.mp4" type="video/mp4"/>
+          </video>
+          <div class="svc-media-badge">Product Films</div>
         </div>
-        <p class="most-loved-label">Restaurant</p>
-        <p class="most-loved-name">Artisan Café — Lifestyle Reel</p>
+        <div class="svc-body">
+          <h3 class="svc-name">Product & Hero Films</h3>
+          <p class="svc-desc">Detail-driven product edits that make audiences want to own what they're watching — built for launches and campaigns.</p>
+          <a href="#cta" class="svc-link">Book Edit →</a>
+        </div>
       </div>
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_6','Luxe Resort — Product Film')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Comm-03.jfif" alt="Resort Film" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
+
+      <div class="svc-card">
+        <div class="svc-media">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=700&q=80">
+            <source src="REPLACE_WITH_SERVICE_VIDEO_4.mp4" type="video/mp4"/>
+          </video>
+          <div class="svc-media-badge">Colour Grading</div>
         </div>
-        <p class="most-loved-label">Hotel & Hospitality</p>
-        <p class="most-loved-name">Luxe Resort — Brand Story</p>
-      </div>
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_7','Craft Brewery — Product Film')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Comm-04.jfif" alt="Brand Film" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">Cinematic Colour Grading</h3>
+          <p class="svc-desc">Custom LUTs and scene-by-scene grading in DaVinci Resolve, building a signature visual look unique to your brand.</p>
+          <a href="#cta" class="svc-link">Book Edit →</a>
         </div>
-        <p class="most-loved-label">Corporate</p>
-        <p class="most-loved-name">Craft Brewery — Product Film</p>
-      </div>
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_8','Fashion Brand — Campaign')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Comm-05.jfif" alt="Fashion Film" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
-        </div>
-        <p class="most-loved-label">Fashion & Lifestyle</p>
-        <p class="most-loved-name">Fashion Brand — Campaign Edit</p>
-      </div>
-      <div class="most-loved-card reveal" onclick="openLightbox('COMM_VIDEO_ID_9','Corporate Summit — Event Film')">
-        <div class="most-loved-thumb-wrap">
-          <img src="Images/Youtube Thumbnail design.jfif" alt="Corporate Event" loading="lazy">
-          <div class="most-loved-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="most-loved-overlay"></div>
-        </div>
-        <p class="most-loved-label">Corporate</p>
-        <p class="most-loved-name">Summit 2024 — Event Film</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:40px;">
-      <a href="#" onclick="navigateTo('commercial');return false;" class="most-loved-btn">WATCH MORE</a>
+    <div class="svc-nav">
+      <button class="svc-nav-btn" id="svcPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="svc-nav-btn" id="svcNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- ═══ SELECTED WORK ═══ -->
+<!-- <section id="work" class="section">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Projects</div>
+      <h2 class="section-title">Selected <em>Work</em></h2>
+    </div>
+    <p class="section-desc">A showcase of visual styles and storytelling across commercial formats.</p>
+  </div>
+
+  <div class="filter-row reveal d1">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="brand">Brand Films</button>
+    <button class="filter-btn" data-filter="reel">Short-Form</button>
+    <button class="filter-btn" data-filter="product">Product</button>
+  </div>
+
+  <div class="work-grid reveal d2">
+    <div class="work-card" data-cat="brand">
+      <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80" alt="Hotel Aura"/>
+      <div class="work-overlay"><div class="work-cat">Brand Film</div><div class="work-name">Hotel Aura</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="work-card" data-cat="reel">
+      <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=700&q=80" alt="Olive Bar"/>
+      <div class="work-overlay"><div class="work-cat">Short-Form</div><div class="work-name">Olive Bar Reel</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="work-card" data-cat="product">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Zara India"/>
+      <div class="work-overlay"><div class="work-cat">Product Film</div><div class="work-name">Zara India</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="work-card" data-cat="brand">
+      <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=700&q=80" alt="Luxe Resort"/>
+      <div class="work-overlay"><div class="work-cat">Brand Film</div><div class="work-name">Luxe Resort</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="work-card" data-cat="reel">
+      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=700&q=80" alt="Craft Brewery"/>
+      <div class="work-overlay"><div class="work-cat">Short-Form</div><div class="work-name">Craft Brewery</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="work-card" data-cat="product">
+      <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=700&q=80" alt="TechCorp"/>
+      <div class="work-overlay"><div class="work-cat">Product Film</div><div class="work-name">TechCorp Launch</div></div>
+      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ═══ WHY ME ═══ -->
+<section class="section">
+  <div id="why">
+    <div class="why-media reveal">
+      <video autoplay muted loop playsinline poster="Images/image.png">
+        <source src="REPLACE_WITH_WHY_VIDEO.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div>
+      <div class="section-tag reveal">Why Me</div>
+      <h2 class="section-title reveal d1" style="margin-bottom:2rem;">More Than Just<br/><em>Cutting Footage.</em></h2>
+
+      <div class="why-feature reveal d1">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg></div>
+        <div><div class="why-feature-title">Retention-Driven Editing</div><p class="why-feature-desc">Every cut is built around what keeps audiences watching, not just what looks neat in a timeline.</p></div>
+      </div>
+      <div class="why-feature reveal d2">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div><div class="why-feature-title">Platform-Native Pacing</div><p class="why-feature-desc">A brand film for a hotel website moves differently than a 15-second Instagram hook — we know the difference.</p></div>
+      </div>
+      <div class="why-feature reveal d3">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><div class="why-feature-title">Fast, Reliable Turnaround</div><p class="why-feature-desc">48-72 hour delivery on most short-form work, with clear timelines on every commercial project.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" class="section">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">Trusted by <em>Brands.</em></h2>
+    </div>
+    <p class="section-desc">Feedback from businesses who rely on consistent, high-quality edits.</p>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""/></div>
+      <div><p class="testi-text">"Working with Darshan made our hotel's content production effortless — clean, well-paced edits delivered right on time, every time."</p><div class="testi-name">Vikram Mehta — Hotel Aura</div></div>
+    </div>
+    <div class="testi-card reveal d1">
+      <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=100&q=80" alt=""/></div>
+      <div><p class="testi-text">"The attention to detail — sound, motion graphics, colour — makes every film feel genuinely premium and on-brand."</p><div class="testi-name">Ananya Joshi — Olive Bar</div></div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80" alt=""/></div>
+      <div><p class="testi-text">"Our product film drove a noticeable engagement spike the week it launched. Professional from brief to delivery."</p><div class="testi-name">Rohan Kapoor — Zara India</div></div>
+    </div>
+    <div class="testi-card reveal d3">
+      <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=100&q=80" alt=""/></div>
+      <div><p class="testi-text">"Creative, fast, and easy to collaborate with — exactly the kind of editor every growing brand needs on call."</p><div class="testi-name">Sophie Turner — Craft Brewery</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked<br/><em>Questions.</em></h2>
+    </div>
+  </div>
+
+  <div class="faq-list reveal d1">
+    <div class="faq-item">
+      <div class="faq-q"><span>What is your typical turnaround time?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Most short-form edits are delivered in 48-72 hours. Full commercial brand films typically take 5-10 business days depending on scope and revisions.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Do you offer revisions?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Yes — every project includes two structured rounds of revisions to make sure the final film matches your vision exactly.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Can you match my brand's existing style?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Absolutely. Share past content or reference films and we'll build a custom colour grade and pacing style that's consistent with your brand identity.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>What do you need from me to get started?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Just your raw footage via a shared drive, plus any brand guidelines, reference films, or specific goals for the project.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta" class="section">
+  <div class="cta-eyebrow section-tag reveal" style="justify-content:center;display:flex;">Let's Work Together</div>
+  <h2 class="cta-title reveal d1">Start Your<br/><em>Next Film.</em></h2>
+  <p class="cta-sub reveal d2">Tell us about your project — we'll reply within 24 hours with next steps.</p>
+  <div class="cta-actions reveal d3">
+    <a href="mailto:contact@storiesbydarshan.com" class="btn-solid">Book a Call ↗</a>
+    <a href="#work" class="btn-outline">View Work</a>
+  </div>
+</section>
+
+
+  
 <footer class="site-footer">
 
   <!-- LEFT: Social icons + copyright -->
@@ -354,7 +489,7 @@
 </footer>
 </div>
  
-
+</div>
 
 
 
@@ -492,6 +627,11 @@
  
   </section>
  
+ 
+
+
+
+
   
 
   <!-- ══════════════════════════════════════════════════════════
@@ -558,7 +698,7 @@
 
     <div class="video-card vc-c7" onclick="openCommCard(this)" data-title="Product — Luxury Watch">
       <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-7.jpg" class="video-thumb" alt="Comm 7" loading="lazy"/>
+        <img src="Images/Comm-01.jfif" class="video-thumb" alt="Comm 7" loading="lazy"/>
         <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
       <div class="vc-info"><span class="vc-cat">Product</span><span class="vc-title">Luxury Watch</span></div>
@@ -566,7 +706,7 @@
 
     <div class="video-card vc-c8" onclick="openCommCard(this)" data-title="Brand Film — Cafe Noir">
       <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-8.jpg" class="video-thumb" alt="Comm 8" loading="lazy"/>
+        <img src="Images/Comm-02.jfif" class="video-thumb" alt="Comm 8" loading="lazy"/>
         <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
       <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Cafe Noir</span></div>
@@ -574,12 +714,12 @@
 
     <div class="video-card vc-c9" onclick="openCommCard(this)" data-title="Corporate — Infosys BPO">
       <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-9.jpg" class="video-thumb" alt="Comm 9" loading="lazy"/>
+        <img src="Images/Comm-03.jfif" class="video-thumb" alt="Comm 9" loading="lazy"/>
         <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
       <div class="vc-info"><span class="vc-cat">Corporate</span><span class="vc-title">Infosys BPO</span></div>
     </div>
-
+<!-- 
     <div class="video-card vc-c10" onclick="openCommCard(this)" data-title="Restaurant — The Table">
       <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
         <img src="Images/comm-10.jpg" class="video-thumb" alt="Comm 10" loading="lazy"/>
@@ -602,10 +742,9 @@
         <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
       <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Studio D</span></div>
-    </div>
+    </div> -->
   </div>
 </section>
-  
   
   <!-- ══════════════════════════════════════════════════════════
        PROCESS SECTION — sits OUTSIDE and AFTER the grid section
@@ -921,17 +1060,17 @@
       </div>
     </section>
   </div> -->
-
+<!--  
 <div class="page" id="page-wedding">
   <!-- ═══════════════════════════════════════════════
        SECTION 1 · HERO
-  ════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════ --
   <section class="hero" id="hero">
     <video class="hero__video" autoplay muted loop playsinline
       poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=85">
-      <source src="Videos/Wedding-page-video.mp4" type="video/mp4" />
+      <source src="Videos/Wedding-hero-page.mp4" type="video/mp4" />
     </video>
-    <!-- Fallback: when no local video, show the poster as BG via JS -->
+    <!-- Fallback: when no local video, show the poster as BG via JS --
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <p class="hero__eyebrow">Stories by Darshan</p>
@@ -952,7 +1091,7 @@
 
   <!-- ═══════════════════════════════════════════════
        SECTION 2 · PHILOSOPHY
-  ════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════ --
   <section class="philosophy" id="philosophy">
     <div class="philosophy__grid">
 
@@ -992,9 +1131,18 @@
   </section>
 
 
+
+
+
+
+
+
+
+
+
   <!-- ═══════════════════════════════════════════════
        SECTION 3 · PORTFOLIO GRID — 4 rows of images
-  ════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════ --
   <section class="portfolio" id="portfolio">
 
     <div class="portfolio__header" data-reveal="up">
@@ -1005,7 +1153,7 @@
 
     <div class="portfolio__mosaic">
 
-      <!-- ── ROW 1 (5 cells, col-3 is tall spanning row 1+2) ── -->
+      <!-- ── ROW 1 (5 cells, col-3 is tall spanning row 1+2) ── --
       <div class="mosaic__cell" data-row="1" data-col="1" data-reveal="fade" style="--delay:0s">
         <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=85&auto=format&fit=crop" alt="Priya & Rohan" loading="lazy"/>
         <div class="mosaic__hover"><span>Priya &amp; Rohan</span><small>Udaipur · 2024</small></div>
@@ -1016,7 +1164,7 @@
         <div class="mosaic__hover"><span>Kavya &amp; Dev</span><small>Goa · 2024</small></div>
       </div>
 
-      <!-- TALL — spans row 1 & 2 -->
+      <!-- TALL — spans row 1 & 2 --
       <div class="mosaic__cell mosaic__cell--tall" data-row="1" data-col="3" data-reveal="fade" style="--delay:0.03s">
         <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=85&auto=format&fit=crop&crop=top" alt="Ritika & Sameer" loading="lazy"/>
         <div class="mosaic__hover"><span>Ritika &amp; Sameer</span><small>Jodhpur · 2023</small></div>
@@ -1032,7 +1180,7 @@
         <div class="mosaic__hover"><span>Ishita &amp; Rahul</span><small>Jaisalmer · 2024</small></div>
       </div>
 
-      <!-- ── ROW 2 (col 1,2 + TEXT CENTER + col 4,5; col 3 = still tall) ── -->
+      <!-- ── ROW 2 (col 1,2 + TEXT CENTER + col 4,5; col 3 = still tall) ── --
       <div class="mosaic__cell" data-row="2" data-col="1" data-reveal="fade" style="--delay:0.05s">
         <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=85&auto=format&fit=crop" alt="Neha & Aditya" loading="lazy"/>
         <div class="mosaic__hover"><span>Neha &amp; Aditya</span><small>Pune · 2023</small></div>
@@ -1043,7 +1191,7 @@
         <div class="mosaic__hover"><span>Zara &amp; Mihir</span><small>Udaipur · 2024</small></div>
       </div>
 
-      <!-- TEXT CELL at col 3 row 2 -->
+      <!-- TEXT CELL at col 3 row 2 --
       <div class="mosaic__cell mosaic__cell--text" data-row="2" data-col="3" data-reveal="fade" style="--delay:0s">
         <p class="mosaic__text-label">some of the most</p>
         <p class="mosaic__text-iconic">&ldquo;ICONIC&rdquo;</p>
@@ -1060,7 +1208,7 @@
         <div class="mosaic__hover"><span>Pooja &amp; Vikrant</span><small>Shimla · 2023</small></div>
       </div>
 
-      <!-- ── ROW 3 (5 equal cells) ── -->
+      <!-- ── ROW 3 (5 equal cells) ── --
       <div class="mosaic__cell" data-row="3" data-col="1" data-reveal="fade" style="--delay:0s">
         <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=85&auto=format&fit=crop" alt="Ananya & Veer" loading="lazy"/>
         <div class="mosaic__hover"><span>Ananya &amp; Veer</span><small>Jaisalmer · 2023</small></div>
@@ -1086,7 +1234,7 @@
         <div class="mosaic__hover"><span>Dia &amp; Nikhil</span><small>Mumbai · 2025</small></div>
       </div>
 
-      <!-- ── ROW 4 (5 equal cells) ── -->
+      <!-- ── ROW 4 (5 equal cells) --
       <div class="mosaic__cell" data-row="4" data-col="1" data-reveal="fade" style="--delay:0s">
         <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=85&auto=format&fit=crop" alt="Riya & Siddharth" loading="lazy"/>
         <div class="mosaic__hover"><span>Riya &amp; Siddharth</span><small>Delhi · 2024</small></div>
@@ -1112,13 +1260,17 @@
         <div class="mosaic__hover"><span>Nisha &amp; Rohan</span><small>Jaipur · 2025</small></div>
       </div>
 
-    </div><!-- /mosaic -->
+    </div>
   </section>
+
+
+
+
 
 
   <!-- ═══════════════════════════════════════════════
        SECTION 4 · WORKS — Infinite Scroll Cards (9:16)
-  ════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════ --
   <section class="works" id="works">
     <div class="works__header" data-reveal="up">
       <p class="section-eyebrow">Featured Stories</p>
@@ -1129,7 +1281,7 @@
     <div class="works__carousel-wrap">
       <div class="works__track" id="worksTrack">
 
-        <!-- Card 1 -->
+        <!-- Card 1 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="o2dmQ8DZV9Y">
             <img src="Images/card-1.webp" alt="Priya & Rohan" loading="lazy"/>
@@ -1142,7 +1294,7 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="LYGa38Iuo8w">
             <img src="Images/card-2.jpg" alt="Reva & Zach" loading="lazy"/>
@@ -1155,7 +1307,7 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="5sWPmr_GKqs">
             <img src="Images/card-3.webp" alt="Alia & Ranbir" loading="lazy"/>
@@ -1168,7 +1320,7 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Card 4 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="xfX_2MJk2Is">
             <img src="Images/card-4.jpg" alt="Kavya & Dev" loading="lazy"/>
@@ -1181,7 +1333,7 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
+        <!-- Card 5 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="TaxAE37xCGk">
             <img src="Images/card-5.webp" alt="Neha & Aditya" loading="lazy"/>
@@ -1194,7 +1346,7 @@
           </div>
         </div>
 
-        <!-- Card 6 -->
+        <!-- Card 6 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="Nkq34a_GuP4">
             <img src="Images/card-6.webp" alt="Ishita & Rahul" loading="lazy"/>
@@ -1207,7 +1359,7 @@
           </div>
         </div>
 
-        <!-- Card 7 -->
+        <!-- Card 7 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="Y1775kwX_N8">
             <img src="Images/card-7.jfif" alt="Ananya & Veer" loading="lazy"/>
@@ -1220,7 +1372,7 @@
           </div>
         </div>
 
-        <!-- Card 8 -->
+        <!-- Card 8 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="8pi1w58buKY">
             <img src="Images/card-8.jfif" alt="Dia & Nikhil" loading="lazy"/>
@@ -1233,7 +1385,7 @@
           </div>
         </div>
 
-        <!-- Card 9 -->
+        <!-- Card 9 --
         <div class="work-card" onclick="openYTCard(this)">
           <div class="work-card__img-wrap" data-yt-id="DbjAXDjAT3U">
             <img src="Images/card-9.jpg" alt="Simran & Kabir" loading="lazy"/>
@@ -1246,31 +1398,28 @@
           </div>
         </div>
 
-      </div><!-- /track (JS will clone for seamless loop) -->
+      </div>
     </div>
 
   </section>
 
 
-
   <!-- ═══════════════════════════════════════════════
        SECTION 5 · SOUL + CINEMA — Black frame section
        (Image 01 new reference)
-  ════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════ --
   <section class="cinema" id="cinema">
 
-    <!-- Beige side panels (the "wings" in the screenshot) are just the body bg showing through -->
     <div class="cinema__frame">
 
-      <!-- Black video panel -->
+      
       <div class="cinema__video-panel">
           <video class="cinema__video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1529636069931-f56e4d4bc43a?w=1200&q=80" onerror="this.style.display='none'" style="display:block">        <source src="soul_cinema.mp4" type="video/mp4" />
         </video>
         <img class="cinema__fallback" src="Images/card-9.jpg" alt="" aria-hidden="true" />
-        <!-- Soft inner gradient so text reads -->
         <div class="cinema__vignette"></div>
 
-        <!-- Centered text overlay -->
+      
         <div class="cinema__text">
           <h2 class="cinema__title">SOUL <span class="cinema__plus">+</span> CINEMA</h2>
           <p class="cinema__body">
@@ -1283,7 +1432,7 @@
 
     </div>
 
-    <!-- Decorative flower images on the sides (BW, like in reference) -->
+
     <div class="cinema__wing cinema__wing--left">
       <img src="https://images.unsplash.com/photo-1487530811015-780ec95b84d5?w=600&q=80&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy"/>
     </div>
@@ -1296,7 +1445,7 @@
 
 <footer class="site-footer">
 
-  <!-- LEFT: Social icons + copyright -->
+  <!-- LEFT: Social icons + copyright --
   <div class="footer-left">
     <div class="footer-social">
       <a href="https://www.instagram.com/storiesby_darshan" target="_blank" rel="noopener" aria-label="Instagram">
@@ -1312,14 +1461,14 @@
     <p class="footer-copy">All copyrights reserved by StoriesByDarshan: 2026</p>
   </div>
 
-  <!-- CENTER: Logo -->
+  <!-- CENTER: Logo --
   <div class="footer-center">
     <a href="#" onclick="navigateTo('home');return false;" class="footer-logo-link">
       <img src="light_logo_cropped.png" alt="StoriesByDarshan" class="footer-logo-img" />
     </a>
   </div>
 
-  <!-- RIGHT: Navigation links -->
+  <!-- RIGHT: Navigation links --
   <div class="footer-links">
     <div class="footer-col">
       <a href="#" onclick="navigateTo('commercial');return false;">Commercial Films</a>
@@ -1342,7 +1491,7 @@
 </div>
 
 
-
+-->
 
 
 <div class="page" id="page-contact">
@@ -1494,7 +1643,7 @@
 ═══════════════════════════════════════ -->
 <div class="page" id="page-about">
   <section class="about-hero">
-    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=1400&q=80" alt="Darshan Agrawal" loading="eager">
+    <img src="Images/image.png" alt="Darshan Agrawal" loading="eager">
     <div class="about-hero-content">
       <h1 class="about-name reveal">Darshan<br><em>Agrawal</em></h1>
       <p class="about-role reveal">Filmmaker · Video Editor · Storyteller</p>
@@ -1526,7 +1675,7 @@
     </div>
     <div class="about-portrait-col reveal">
       <div class="about-portrait">
-        <img class="about-portrait-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&amp;q=85&amp;auto=format&amp;fit=crop&amp;crop=faces" alt="Darshan Agrawal — Filmmaker and Video Editor" loading="lazy">
+        <img class="about-portrait-img" src="Images/image.png" alt="Darshan Agrawal — Filmmaker and Video Editor" loading="lazy">
         <span class="about-portrait-frame" aria-hidden="true"></span>
       </div>
     </div>
@@ -1609,6 +1758,6 @@
 </div>
 
 
-<script src="index.js"></script>
+<script src="index 01.js"></script>
 </body>
 </html>
