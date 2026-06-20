@@ -445,26 +445,29 @@ function closeYTCard(wrap) {
 
 /* ── Commercial grid card player ── */
 function closeCommCard(wrap) {
-  const iframe = wrap.querySelector('iframe');
-  if (!iframe) return;
-  iframe.remove();
+  const video = wrap.querySelector('video');
+  if (!video) return;
+
+  video.pause();
+  video.remove();
+
   wrap.querySelector('img').classList.remove('hidden');
   wrap.querySelector('.vc-play').classList.remove('hidden');
 }
 
 function openCommCard(card) {
   const wrap = card.querySelector('.vc-img-wrap');
-  const ytId = wrap.getAttribute('data-yt-id');
-  if (!ytId) return;
+  const videoPath = wrap.getAttribute('data-video');
+  if (!videoPath) return;
 
   /* Toggle off if already playing */
-  if (wrap.querySelector('iframe')) {
+  if (wrap.querySelector('video')) {
     closeCommCard(wrap);
     return;
   }
 
   /* Close any other playing card */
-  document.querySelectorAll('#page-commercial .vc-img-wrap iframe').forEach(existing => {
+  document.querySelectorAll('#page-commercial .vc-img-wrap video').forEach(existing => {
     closeCommCard(existing.closest('.vc-img-wrap'));
   });
 
@@ -472,12 +475,19 @@ function openCommCard(card) {
   wrap.querySelector('img').classList.add('hidden');
   wrap.querySelector('.vc-play').classList.add('hidden');
 
-  /* Inject iframe */
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${window.location.origin}`;
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  iframe.allowFullscreen = true;
-  wrap.appendChild(iframe);
+  /* Create local video */
+  const video = document.createElement('video');
+  video.src = videoPath;
+  video.controls = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.preload = 'metadata';
+
+  video.style.width = '100%';
+  video.style.height = '100%';
+  video.style.objectFit = 'cover';
+
+  wrap.appendChild(video);
 }
 
 
@@ -486,42 +496,92 @@ function openCommCard(card) {
 
 
 
+// function openYTCard(card) {
+//   const wrap = card.querySelector('.work-card__img-wrap');
+//   const ytId = wrap.getAttribute('data-yt-id');
+//   if (!ytId) return;
+
+//   /* If already playing this card — clicking again closes it */
+//   if (wrap.querySelector('iframe')) {
+//     closeYTCard(wrap);
+//     return;
+//   }
+
+//   /* Close ANY other card that is currently playing */
+//   document.querySelectorAll('.work-card__img-wrap iframe').forEach(existingIframe => {
+//     closeYTCard(existingIframe.closest('.work-card__img-wrap'));
+//   });
+
+//   /* Hide thumbnail and play button */
+//   wrap.querySelector('img').classList.add('hidden');
+//   wrap.querySelector('.work-card__play').classList.add('hidden');
+
+//   /* Pause the carousel while video plays */
+//   const track = document.getElementById('worksTrack');
+//   if (track) track.dispatchEvent(new MouseEvent('mouseenter'));
+
+//   /* Inject YouTube iframe */
+//   const iframe = document.createElement('iframe');
+//   iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${window.location.origin}`;
+//   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+//   iframe.allowFullscreen = true;
+//   wrap.appendChild(iframe);
+// }
+
+
 function openYTCard(card) {
   const wrap = card.querySelector('.work-card__img-wrap');
-  const ytId = wrap.getAttribute('data-yt-id');
-  if (!ytId) return;
+  const videoPath = wrap.getAttribute('data-video');
+  if (!videoPath) return;
 
-  /* If already playing this card — clicking again closes it */
-  if (wrap.querySelector('iframe')) {
+  /* If already playing, close */
+  if (wrap.querySelector('video')) {
     closeYTCard(wrap);
     return;
   }
 
-  /* Close ANY other card that is currently playing */
-  document.querySelectorAll('.work-card__img-wrap iframe').forEach(existingIframe => {
-    closeYTCard(existingIframe.closest('.work-card__img-wrap'));
+  /* Close any other playing video */
+  document.querySelectorAll('.work-card__img-wrap video').forEach(existingVideo => {
+    closeYTCard(existingVideo.closest('.work-card__img-wrap'));
   });
 
   /* Hide thumbnail and play button */
   wrap.querySelector('img').classList.add('hidden');
   wrap.querySelector('.work-card__play').classList.add('hidden');
 
-  /* Pause the carousel while video plays */
+  /* Pause carousel */
   const track = document.getElementById('worksTrack');
   if (track) track.dispatchEvent(new MouseEvent('mouseenter'));
 
-  /* Inject YouTube iframe */
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${window.location.origin}`;
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  iframe.allowFullscreen = true;
-  wrap.appendChild(iframe);
+  /* Create local video */
+  const video = document.createElement('video');
+  video.src = videoPath;
+  video.controls = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.style.width = '100%';
+  video.style.height = '100%';
+
+  wrap.appendChild(video);
 }
 
 
 
 
 
+
+
+// Color Grading Slider Interaction
+const sliderContainers = document.querySelectorAll('.ba-slider-container');
+
+sliderContainers.forEach(container => {
+  const input = container.querySelector('.ba-slider-input');
+  
+  input.addEventListener('input', (e) => {
+    // Updates the CSS variable dynamically as the user drags
+    container.style.setProperty('--position', `${e.target.value}%`);
+  });
+});
 
 
 
