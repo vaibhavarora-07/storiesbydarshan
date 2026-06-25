@@ -217,6 +217,10 @@
   </div>
 </section>
 
+
+
+
+
 <!-- ═══ SERVICES ═══ -->
 <section id="services" class="section">
   <div class="section-head reveal">
@@ -293,85 +297,119 @@
 </section>
 
 <!-- ═══ SELECTED WORK ═══ -->
-<section id="work" class="section">
-  <div class="section-head reveal">
-    <div>
-      <div class="section-tag">Projects</div>
-      <h2 class="section-title">Selected <em>Work</em></h2>
-    </div>
-    <p class="section-desc">A showcase of visual styles and storytelling across commercial formats.</p>
-  </div>
-
-  <div class="filter-row reveal d1">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="brand">Brand Films</button>
-    <button class="filter-btn" data-filter="reel">Short-Form</button>
-    <button class="filter-btn" data-filter="product">Product</button>
-  </div>
-
-  <div class="work-grid reveal d2">
-
-    <div class="work-card" data-cat="brand">
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/01.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Brand Film</div><div class="work-name">Hotel Aura</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+<section class="portfolio-section">
+    <div class="portfolio-header">
+        <span class="tag">Projects</span>
+        <h2>Selected Editing Work</h2>
+        <p>A showcase of visual styles and creative editing across long-form and short-form content.</p>
     </div>
 
-    <div class="work-card" data-cat="reel">
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/02.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Short-Form</div><div class="work-name">Street Edit</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="short-form">Short-Form & Reels</button>
+        <button class="filter-btn" data-filter="youtube">Youtube</button>
     </div>
 
-    <div class="work-card" data-cat="product">
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/03.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Product Film</div><div class="work-name">Zara India</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
+    <div class="portfolio-grid" id="portfolio-grid">
+        
+        <div class="portfolio-item" data-category="youtube">
+            <div class="image-wrapper">
+                <video src="Videos/01.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>Daniel Hart</h3>
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="work-card" data-cat="brand">
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/04.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Brand Film</div><div class="work-name">Luxe Resort</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
+        <div class="portfolio-item" data-category="short-form">
+            <div class="image-wrapper">
+                <video src="Videos/02.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>Marcus Reid</h3>
+                    <span>Short-Form & Reels</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="work-card" data-cat="reel">
-      <!-- <div class="work-creator">
-        <div class="work-avatar"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=80&q=80" alt=""/></div>
-        <span class="work-creator-name">Craft Brewery</span>
-        <span class="work-verified">✓</span>
-      </div> -->
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/07.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Short-Form</div><div class="work-name">Teaser</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
+        <div class="portfolio-item" data-category="youtube">
+            <div class="image-wrapper">
+                <video src="Videos/03.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>Brandon</h3>
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="work-card" data-cat="product">
-      <!-- <div class="work-creator">
-        <div class="work-avatar"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&q=80" alt=""/></div>
-        <span class="work-creator-name">TechCorp</span>
-        <span class="work-verified">✓</span>
-      </div> -->
-      <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80">
-        <source src="Videos/05.mp4" type="video/mp4"/>
-      </video>
-      <div class="work-overlay"><div class="work-cat">Product Film</div><div class="work-name">TechCorp Launch</div></div>
-      <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
+        <div class="portfolio-item" data-category="short-form">
+            <div class="image-wrapper">
+                <video src="Videos/04.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>Sarah Jenkins</h3>
+                    <span>Short-Form & Reels</span>
+                </div>
+            </div>
+        </div>
 
-  </div>
+        <div class="portfolio-item" data-category="youtube">
+            <div class="image-wrapper">
+                <video src="Videos/05.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>The Tech Review</h3>
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item" data-category="short-form">
+            <div class="image-wrapper">
+                <video src="Videos/07.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <h3>Fitness Journey</h3>
+                    <span>Short-Form & Reels</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. Remove 'active' class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // 2. Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // 3. Get the filter category from the clicked button
+            const filterValue = button.getAttribute('data-filter');
+
+            // 4. Loop through items and show/hide based on category
+            portfolioItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.classList.remove('hidden');
+                    
+                    // Re-trigger the CSS animation for a smooth effect
+                    item.style.animation = 'none';
+                    item.offsetHeight; /* trigger reflow */
+                    item.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+</script>
 <!-- ═══ WHY ME ═══ -->
 <section class="section">
   <div id="why">
@@ -682,105 +720,140 @@
  
   <span class="section-label reveal">Commercial Work</span>
  
-  <div class="video-grid">
+  
+  <div class="comm-portfolio-grid" id="comm-video-grid">
+      
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/01.mp4">
+              <img src="Images/1.webp" class="video-thumb" alt="Hotel Aravali">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/02.mp4">
+              <img src="Images/2.jpeg" class="video-thumb" alt="Zara India">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/03.mp4">
+              <img src="Images/3.webp" class="video-thumb" alt="TechCorp Launch">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/04.mp4">
+              <img src="Images/4.webp" class="video-thumb" alt="Olive Bar">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/05.mp4">
+              <img src="Images/5.webp" class="video-thumb" alt="Sneaker Co">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/06.mp4">
+              <img src="Images/6.webp" class="video-thumb" alt="Startup Summit">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/07.mp4">
+              <img src="Images/Comm-01.jfif" class="video-thumb" alt="Luxury Watch">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/08.mp4">
+              <img src="Images/Comm-02.jfif" class="video-thumb" alt="Cafe Noir">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/09.mp4">
+              <img src="Images/Comm-03.jfif" class="video-thumb" alt="Infosys BPO">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/09.mp4">
+              <img src="Images/Comm-03.jfif" class="video-thumb" alt="Infosys BPO">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/09.mp4">
+              <img src="Images/Comm-03.jfif" class="video-thumb" alt="Infosys BPO">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+      <div class="comm-video-card">
+          <div class="comm-image-wrapper" data-video="Videos/09.mp4">
+              <img src="Images/Comm-03.jfif" class="video-thumb" alt="Infosys BPO">
+              <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+      </div>
+    
+  </section>
 
-    <div class="video-card vc-c1" onclick="openCommCard(this)" data-title="Brand Film — Hotel Aravali">
-      <div class="vc-img-wrap" data-video="Videos/01.mp4">
-        <img src="Images/1.webp" class="video-thumb" alt="Comm 1" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Hotel Aravali</span></div>
-    </div>
 
-    <div class="video-card vc-c2" onclick="openCommCard(this)" data-title="Product Film — Zara India">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/2.jpeg" class="video-thumb" alt="Comm 2" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Product Film</span><span class="vc-title">Zara India</span></div>
-    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select all cards inside the new commercial grid
+        const commCards = document.querySelectorAll('#comm-video-grid .comm-video-card');
 
-    <div class="video-card vc-c3" onclick="openCommCard(this)" data-title="Corporate — TechCorp Launch">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/3.webp" class="video-thumb" alt="Comm 3" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Corporate</span><span class="vc-title">TechCorp Launch</span></div>
-    </div>
+        commCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const wrap = this.querySelector('.comm-image-wrapper');
+                const videoSrc = wrap.getAttribute('data-video');
+                
+                // If no video is attached, or the video is already playing, do nothing
+                if (!videoSrc || wrap.querySelector('video')) return;
 
-    <div class="video-card vc-c4" onclick="openCommCard(this)" data-title="Restaurant — Olive Bar">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/4.webp" class="video-thumb" alt="Comm 4" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Restaurant</span><span class="vc-title">Olive Bar</span></div>
-    </div>
+                // 1. Reset all OTHER playing videos in this section back to images
+                document.querySelectorAll('#comm-video-grid .comm-image-wrapper video').forEach(vid => {
+                    const parentWrap = vid.closest('.comm-image-wrapper');
+                    vid.remove(); // Remove the video
+                    parentWrap.querySelector('.video-thumb').style.display = 'block'; // Show image
+                    parentWrap.querySelector('.vc-play').style.display = 'flex'; // Show play button
+                });
 
-    <div class="video-card vc-c5" onclick="openCommCard(this)" data-title="Brand Film — Sneaker Co">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/5.webp" class="video-thumb" alt="Comm 5" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Sneaker Co</span></div>
-    </div>
+                // 2. Hide the image and play button for the clicked card
+                wrap.querySelector('.video-thumb').style.display = 'none';
+                wrap.querySelector('.vc-play').style.display = 'none';
 
-    <div class="video-card vc-c6" onclick="openCommCard(this)" data-title="Event — Startup Summit">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/6.webp" class="video-thumb" alt="Comm 6" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Event</span><span class="vc-title">Startup Summit</span></div>
-    </div>
+                // 3. Create the video element
+                const videoEl = document.createElement('video');
+                videoEl.src = videoSrc;
+                videoEl.controls = true; // Shows standard play/pause UI
+                videoEl.playsInline = true;
+                videoEl.muted = false; // Unmuted by default
+                
+                // 4. Force video to fit perfectly inside the rounded card
+                videoEl.style.width = '100%';
+                videoEl.style.height = '100%';
+                videoEl.style.objectFit = 'cover';
+                videoEl.style.position = 'absolute';
+                videoEl.style.top = '0';
+                videoEl.style.left = '0';
+                videoEl.style.borderRadius = 'inherit';
+                videoEl.style.zIndex = '5'; // Ensures it sits above the background
 
-    <div class="video-card vc-c7" onclick="openCommCard(this)" data-title="Product — Luxury Watch">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/Comm-01.jfif" class="video-thumb" alt="Comm 7" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Product</span><span class="vc-title">Luxury Watch</span></div>
-    </div>
+                // 5. Add to the HTML and play
+                wrap.appendChild(videoEl);
+                
+                videoEl.play().catch(error => {
+                    console.error("Autoplay blocked, falling back to muted play:", error);
+                    videoEl.muted = true; // Fallback for strict browsers
+                    videoEl.play();
+                });
+            });
+        });
+    });
+</script>
 
-    <div class="video-card vc-c8" onclick="openCommCard(this)" data-title="Brand Film — Cafe Noir">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/Comm-02.jfif" class="video-thumb" alt="Comm 8" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Cafe Noir</span></div>
-    </div>
-
-    <div class="video-card vc-c9" onclick="openCommCard(this)" data-title="Corporate — Infosys BPO">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/Comm-03.jfif" class="video-thumb" alt="Comm 9" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Corporate</span><span class="vc-title">Infosys BPO</span></div>
-    </div>
-<!-- 
-    <div class="video-card vc-c10" onclick="openCommCard(this)" data-title="Restaurant — The Table">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-10.jpg" class="video-thumb" alt="Comm 10" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Restaurant</span><span class="vc-title">The Table</span></div>
-    </div>
-
-    <div class="video-card vc-c11" onclick="openCommCard(this)" data-title="Event — TEDx Udaipur">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-11.jpg" class="video-thumb" alt="Comm 11" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Event</span><span class="vc-title">TEDx Udaipur</span></div>
-    </div>
-
-    <div class="video-card vc-c12" onclick="openCommCard(this)" data-title="Brand Film — Studio D">
-      <div class="vc-img-wrap" data-yt-id="VLkAMQhx7GY">
-        <img src="Images/comm-12.jpg" class="video-thumb" alt="Comm 12" loading="lazy"/>
-        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
-      <div class="vc-info"><span class="vc-cat">Brand Film</span><span class="vc-title">Studio D</span></div>
-    </div> -->
-  </div>
-</section>
   
   <!-- ══════════════════════════════════════════════════════════
        PROCESS SECTION — sits OUTSIDE and AFTER the grid section

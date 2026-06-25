@@ -809,3 +809,52 @@ document.querySelectorAll('.scc-home a[href^="#"]').forEach(a=>{
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all cards inside our newly updated grid
+    const videoCards = document.querySelectorAll('#inline-video-grid .video-card');
+
+    videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const wrap = this.querySelector('.vc-img-wrap');
+            const videoSrc = wrap.getAttribute('data-video');
+            
+            // If there's no video linked, or this one is already playing, do nothing
+            if (!videoSrc || wrap.querySelector('video')) return;
+
+            // 1. Reset all OTHER playing videos back to their thumbnails
+            document.querySelectorAll('#inline-video-grid .vc-img-wrap video').forEach(vid => {
+                const parentWrap = vid.closest('.vc-img-wrap');
+                vid.remove(); // Delete the video element
+                parentWrap.querySelector('.video-thumb').style.display = 'block'; // Bring back image
+                parentWrap.querySelector('.vc-play').style.display = 'flex'; // Bring back play icon
+            });
+
+            // 2. Hide the thumbnail and play button for THIS clicked card
+            wrap.querySelector('.video-thumb').style.display = 'none';
+            wrap.querySelector('.vc-play').style.display = 'none';
+
+            // 3. Create and inject the new video element
+            const videoEl = document.createElement('video');
+            videoEl.src = videoSrc;
+            videoEl.autoplay = true;
+            videoEl.controls = true; // Shows the play/pause/volume controls
+            videoEl.playsInline = true;
+            
+            // Inline CSS to ensure it perfectly fills the wrapper
+            videoEl.style.width = '100%';
+            videoEl.style.height = '100%';
+            videoEl.style.objectFit = 'cover';
+            videoEl.style.position = 'absolute';
+            videoEl.style.top = '0';
+            videoEl.style.left = '0';
+            videoEl.style.borderRadius = 'inherit';
+
+            // Add the playing video to the wrapper
+            wrap.appendChild(videoEl);
+        });
+    });
+});

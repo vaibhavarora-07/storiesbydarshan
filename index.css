@@ -376,13 +376,13 @@ html{scroll-behavior:smooth;}
   .svc-nav-btn:hover{border-color:var(--gold);background:var(--gold-soft);}
   .svc-nav-btn svg{width:16px;height:16px;}
 
-  /* ── WORK GRID w/ filters ── */
+  /* ── WORK GRID w/ filters ── *
   .filter-row{display:flex;gap:.7rem;margin-bottom:2.5rem;flex-wrap:wrap;}
   .filter-btn{padding:.55rem 1.3rem;border:1px solid var(--border);border-radius:100px;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:all .25s ease;}
   .filter-btn.active{background:var(--white);color:var(--black);border-color:var(--white);}
   .filter-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-soft);}
 
-  /* .work-avatar img{width:100%;height:100%;object-fit:cover;} */
+  /* .work-avatar img{width:100%;height:100%;object-fit:cover;} *
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1500px;margin:0 auto;}
   .work-card{position:relative;aspect-ratio:2/3;border-radius:18px;overflow:hidden;background:var(--mid);cursor:pointer;width:100%;}
   .work-card{display:block;}
@@ -400,7 +400,201 @@ html{scroll-behavior:smooth;}
 /* .work-creator{position:absolute;top:1rem;left:1rem;right:1rem;display:flex;align-items:center;gap:.6rem;z-index:2;}
 .work-avatar{width:32px;height:32px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(255,255,255,0.4);flex-shrink:0;}
 .work-creator-name{font-family:var(--font-body);font-size:.85rem;font-weight:600;color:var(--white);text-shadow:0 1px 4px rgba(0,0,0,0.6);}
-.work-verified{width:16px;height:16px;border-radius:50%;background:var(--gold);color:var(--black);font-size:.6rem;display:flex;align-items:center;justify-content:center;font-weight:700;} */
+.work-verified{width:16px;height:16px;border-radius:50%;background:var(--gold);color:var(--black);font-size:.6rem;display:flex;align-items:center;justify-content:center;font-weight:700;} */ */
+
+
+
+
+/* Base Styling & Dark Theme */
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Inter', 'Jost', sans-serif;    
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+.portfolio-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.tag {
+    display: inline-block;
+    background: transparent; /* Changed to transparent to match your image */
+    color: #aaa;
+    padding: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* ADD THIS LINE for that wide spacing: */
+    letter-spacing: 3px; 
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-header h2,
+.overlay h3 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    font-weight: 400; /* Lowered weight makes the serif look more elegant */
+}
+
+.portfolio-header p {
+    color: #888;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    /* ADD THIS LINE: */
+    font-family: 'Inter', 'Jost', sans-serif; 
+}
+
+.filter-btn:hover {
+    border-color: #666;
+    color: #fff;
+}
+
+.filter-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Portfolio Item & Animations */
+.portfolio-item {
+    border-radius: 16px;
+    overflow: hidden;
+    /* Animation for filtering */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.portfolio-item.hidden {
+    display: none;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Gives a nice vertical portrait look common for video showcases */
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Hover Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    transform: translateY(15px);
+    transition: transform 0.4s ease;
+}
+
+.overlay span {
+    color: #aaa;
+    font-size: 0.9rem;
+    transform: translateY(15px);
+    transition: transform 0.4s ease;
+    transition-delay: 0.05s;
+}
+
+.image-wrapper:hover .overlay h3,
+.image-wrapper:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* Keyframes for smooth filtering */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-wrapper img, 
+.image-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes sure the video fills the box perfectly */
+    transition: transform 0.5s ease;
+    display: block; /* Removes any weird spacing below the video */
+}
+
+.image-wrapper:hover img, 
+.image-wrapper:hover video {
+    transform: scale(1.05); /* Keeps your hover zoom effect intact */
+}
+
+
+
+
+
 
 /* ── WHY ME ── */
 #why{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,5vw,5rem);align-items:center;}
@@ -934,7 +1128,103 @@ html{scroll-behavior:smooth;}
 
 
 
-
+body {
+    background-color: #0d0d0d;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+/* Container Styling */
+.comm-portfolio-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+}
+/* Header & Typography */
+.comm-portfolio-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+.comm-portfolio-header .tag {
+    display: inline-block;
+    color: #aaa;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+.comm-portfolio-header h2 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    color: #fff;
+}
+.comm-portfolio-header p {
+    color: #888;
+    max-width: 500px;
+    line-height: 1.6;
+}
+/* The Grid Layout */
+.comm-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px; /* Space between cards */
+}
+/* Card & Image Wrapper */
+.comm-video-card {
+    border-radius: 16px; /* Rounded edges */
+    overflow: hidden;
+}
+.comm-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16; /* TALL MOBILE RATIO */
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111; /* Dark placeholder color */
+}
+.comm-image-wrapper img,
+.comm-image-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.comm-image-wrapper img {
+    transition: transform 0.6s ease;
+}
+.comm-image-wrapper:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+/* Play Button SVG Styling */
+.vc-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5); /* Dark circle background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.vc-play svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; /* White play icon */
+    margin-left: 4px; /* Optically centers the triangle */
+}
+.comm-image-wrapper:hover .vc-play {
+    background: rgba(255, 255, 255, 0.2); /* Lightens up when hovered */
+    transform: translate(-50%, -50%) scale(1.1); /* Slightly pops out */
+}
 
 
 
