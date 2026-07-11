@@ -41,7 +41,7 @@
   font-weight: 500;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: #E8D5B7;
+  color: #cf1134;
   display: block;
   margin-bottom: 1.2rem;
   opacity: 0.7;
@@ -156,7 +156,7 @@
   position: absolute;
   left: 0; top: 10%; bottom: 10%;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, #E8D5B7, transparent);
+  background: linear-gradient(to bottom, transparent, #cf1134, transparent);
   opacity: 0.3;
 }
 #page-commercial .cp-text--left::before {
@@ -164,7 +164,7 @@
   position: absolute;
   right: 0; top: 10%; bottom: 10%;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, #E8D5B7, transparent);
+  background: linear-gradient(to bottom, transparent, #cf1134, transparent);
   opacity: 0.3;
 }
 
@@ -174,7 +174,7 @@
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #E8D5B7;
+  color: #cf1134;
   display: inline-block;
   margin-bottom: 1.4rem;
   padding: 0.4rem 1rem;
@@ -191,7 +191,7 @@
 }
 #page-commercial .cp-step-title em {
   font-style: italic;
-  color: #E8D5B7;
+  color: #cf1134;
   display: block;
 }
 
@@ -229,7 +229,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #E8D5B7;
+  background: #cf1134;
   flex-shrink: 0;
   opacity: 0.6;
 }
