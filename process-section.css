@@ -174,7 +174,7 @@
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #cf1134;
+  color: #E8D5B7;
   display: inline-block;
   margin-bottom: 1.4rem;
   padding: 0.4rem 1rem;
@@ -229,7 +229,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #cf1134;
+  background: #E8D5B7;
   flex-shrink: 0;
   opacity: 0.6;
 }
