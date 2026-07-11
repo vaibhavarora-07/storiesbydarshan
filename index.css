@@ -240,7 +240,7 @@ html{scroll-behavior:smooth;}
   --black:#0a0a0a; --off-black:#111111; --dark:#161616; --mid:#1f1f1f;
   --muted:#8a8a8a; --border:rgba(255,255,255,0.09);
   --white:#f5f2ee; --cream:#F6E9D8;;
-  --gold:#E8D5B7; --gold-dim:#E8D5B7; --gold-soft:rgba(232, 213, 183, 0.15);
+  --gold:#cf1134; --gold-dim:#E8D5B7; --gold-soft:rgba(232, 213, 183, 0.15);
   --font-display:'Playfair Display',Georgia,serif;
   --font-body:'Inter',system-ui,sans-serif;
   --font-mono:'Space Grotesk',monospace;
