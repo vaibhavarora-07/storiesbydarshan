@@ -158,7 +158,7 @@ body.is-ready #preloader { display:none !important; pointer-events:none; }
 
 .nav-links a {
   font-family:var(--font-sans);
-  font-size:0.62rem; font-weight:300;
+  font-size:0.8rem; font-weight:300;
   letter-spacing:0.2em; text-transform:uppercase;
   text-decoration:none;
   transition:color 0.3s;
@@ -662,7 +662,7 @@ body {
 
 /* ── CTA ── */
 #cta{text-align:center;position:relative;overflow:hidden;padding:clamp(5rem,11vh,9rem) clamp(1.5rem,6vw,5rem);}
-#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(201,169,110,0.09) 0%,transparent 65%);pointer-events:none;}
+#cta::before{content:'';position:absolute;inset:0;pointer-events:none;}
 .cta-title{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,5.2rem);font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:1.3rem;position:relative;z-index:1;}
 .cta-title em{font-style:italic;font-weight:400;color:var(--gold);}
 .cta-sub{font-size:.95rem;font-weight:300;color:var(--muted);max-width:420px;margin:0 auto 2.5rem;position:relative;z-index:1;}
