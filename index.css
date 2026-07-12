@@ -9,7 +9,7 @@
   --black-soft: #111111;
   --navy:       #1C2B3A;
   --beige-logo: #E8D5B7;
-  --gold:       #C9A84C;
+  --gold:       #f6e9d8;
   --gray:       #888888;
   --gray-light: #AAAAAA;
   --border:     #D8CFC4;
@@ -159,18 +159,18 @@ body.is-ready #preloader { display:none !important; pointer-events:none; }
 
 .nav-links a {
   font-family:var(--font-sans);
-  font-size:0.8rem; font-weight:300;
+  font-size:0.98rem; font-weight:300;
   letter-spacing:0.2em; text-transform:uppercase;
   text-decoration:none;
   transition:color 0.3s;
   position:relative; padding-bottom:3px;
 }
-.dark-nav .nav-links a  { color:#E8D5B7; }
-.light-nav .nav-links a { color:#E8D5B7;; }
+.dark-nav .nav-links a  { color:#f6e9d8; }
+.light-nav .nav-links a { color:#f6e9d8;; }
 .nav-links a::after {
   content:''; position:absolute;
   bottom:0; left:0; width:0; height:1px;
-  background:var(--gold); transition:width 0.3s;
+  background:var(--accent); transition:width 0.3s;
 }
 .nav-links a:hover::after,
 .nav-links a.active::after { width:100%; }
