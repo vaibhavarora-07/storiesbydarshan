@@ -14,6 +14,7 @@
   --gray-light: #AAAAAA;
   --border:     #D8CFC4;
   --border-dark:#2A2A2A;
+  --accent:#cf1134;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Jost', sans-serif;
   --nav-h: 64px;
@@ -43,7 +44,7 @@ body { font-family:var(--font-sans); background:var(--linen); color:var(--black)
 }
 
 .preloader-logo-img {
-  width:min(440px, 88vw);
+  width:min(300px, 88vw);
   max-width:88vw;
   opacity:0; transform:scale(0.9);
 }
@@ -65,7 +66,7 @@ body { font-family:var(--font-sans); background:var(--linen); color:var(--black)
 }
 .preloader-tagline {
   font-family:var(--font-sans);
-  font-size:0.58rem; font-weight:200;
+  font-size:0.75rem; font-weight:200;
   letter-spacing:0.45em; text-transform:uppercase;
   color:rgba(246,233,216,0.55);
   margin-top:10px;
@@ -85,7 +86,7 @@ body { font-family:var(--font-sans); background:var(--linen); color:var(--black)
 .preloader-progress-bar {
   width:0%;
   height:100%;
-  background:var(--gold);
+  background:var(--accent);
   transition:none;
 }
 .preloader-percent {
