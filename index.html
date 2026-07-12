@@ -553,6 +553,11 @@
 
 
 
+
+
+
+
+
 <!-- COMMERCIAL PAGE -->
 <div class="page" id="page-commercial">
  
@@ -589,8 +594,8 @@
  
       <!-- BIG headline — Bebas Neue, two-line like image 3 -->
       <h1 class="comm-hero__headline">
-        YOUR BRAND,
-        <span class="ch-accent">CINEMATIC.</span>
+        NOT JUST FOOTAGE.
+        <span class="ch-accent">A FEELING.</span>
       </h1>
  
       <p class="comm-hero__body">
@@ -600,9 +605,9 @@
       <div class="comm-hero__ctas">
         <a href="#comm-grid" class="ch-btn-primary">View Our Work</a>
         <a
-          href="#"
+          href="Videos/Commercial-video-01.mp4"
           class="ch-btn-ghost"
-          onclick="openLightbox('YOUR_SHOWREEL_ID','Commercial Showreel — StoriesByDarshan'); return false;"
+          target="_blank"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
           Watch Showreel
@@ -967,7 +972,7 @@
     </p>
     <div class="cc-detail">
       <span class="cc-detail-label">Email</span>
-      <a href="mailto:contact@storiesbydarshan.com" class="cc-detail-val">contact@storiesbydarshan.com</a>
+      <a href="mailto:darshanagraw@gmail.com" class="cc-detail-val">darshanagraw@gmail.com</a>
     </div>
     <div class="cc-detail">
       <span class="cc-detail-label">Instagram</span>
@@ -977,27 +982,27 @@
 
   <!-- Right column — form -->
   <div class="cc-right">
-    <div class="cc-form-wrap">
+    <form class="cc-form-wrap" id="briefForm" onsubmit="submitBriefForm(event)">
 
       <div class="cc-field-row">
         <div class="cc-field">
           <label class="cc-label" for="cc-name">Your Name</label>
-          <input class="cc-input" id="cc-name" type="text" placeholder="Darshan Shah" autocomplete="off" />
+          <input class="cc-input" id="cc-name" name="Full Name" type="text" placeholder="Name" autocomplete="off" required />
         </div>
         <div class="cc-field">
           <label class="cc-label" for="cc-email">Email</label>
-          <input class="cc-input" id="cc-email" type="email" placeholder="hello@yourbrand.com" autocomplete="off" />
+          <input class="cc-input" id="cc-email" name="Email" type="email" placeholder="hello@yourbrand.com" autocomplete="off" required />
         </div>
       </div>
 
       <div class="cc-field">
         <label class="cc-label" for="cc-phone">Phone</label>
-        <input class="cc-input" id="cc-phone" type="tel" placeholder="+91-8619219671" autocomplete="off" />
+        <input class="cc-input" id="cc-phone" name="Phone" type="tel" placeholder="+91-XXXXXXXXXX" autocomplete="off" />
       </div>
 
       <div class="cc-field">
         <label class="cc-label" for="cc-service">Service</label>
-        <select class="cc-input cc-select" id="cc-service">
+        <select class="cc-input cc-select" id="cc-service" name="Service">
           <option value="" disabled selected>Select a service</option>
           <option>Brand Film</option>
           <option>Hotel &amp; Restaurant Film</option>
@@ -1011,18 +1016,19 @@
 
       <div class="cc-field">
         <label class="cc-label" for="cc-message">Tell us about your project</label>
-        <textarea class="cc-input cc-textarea" id="cc-message" placeholder="Brief description, timeline, budget range..."></textarea>
+        <textarea class="cc-input cc-textarea" id="cc-message" name="Project Details" placeholder="Brief description, timeline, budget range..."></textarea>
       </div>
 
-      <button class="cc-submit" id="cc-submit-btn" type="button">
+      <button class="cc-submit" id="cc-submit-btn" type="submit">
         <span class="cc-submit-txt">Send Your Brief</span>
         <svg class="cc-submit-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
 
       <p class="cc-privacy">We respect your privacy. Your details are never shared.</p>
 
-    </div>
+    </form>
   </div>
+
 
 </section>
 
@@ -1590,7 +1596,7 @@
 
     <!-- LEFT: Heading + info -->
     <div class="contact-left-panel">
-      <span class="section-label reveal" style="color:#c4a484;">Get In Touch</span>
+      <span class="section-label reveal" style="color:#cf1134;">Get In Touch</span>
       <h2 class="contact-split-heading reveal">Let's Work<br><em>Together</em></h2>
       <p class="contact-intro reveal">If you're planning your dream brand video or need a compelling commercial film — I'd love to hear about your project. Let's create something unforgettable.</p>
       <div class="contact-links reveal">
@@ -1600,33 +1606,32 @@
           </div>
           WhatsApp — Chat directly
         </a>
-        <a href="mailto:hello.storiesbydarshan@gmail.com" class="contact-link">
+        <a href="mailto:darshanagraw@gmail.com" class="contact-link">
           <div class="contact-link-icon">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
-          hello.storiesbydarshan@gmail.com
+          darshanagraw@gmail.com
         </a>
       </div>
     </div>
 
     <!-- RIGHT: Form -->
     <div class="contact-right-panel">
-      <form class="contact-form reveal" id="contactForm" onsubmit="submitContactForm(event);">
-        <div class="form-group">
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xlgqrylq" method="POST" onsubmit="submitContactForm(event)">        <div class="form-group">
           <label class="form-label">Your Name</label>
-          <input class="form-input" type="text" placeholder="Full name">
+          <input class="form-input" type="text" name="Full Name" placeholder="Full name" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email Address</label>
-          <input class="form-input" type="email" placeholder="your@email.com">
+          <input class="form-input" type="email" name="Email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
           <label class="form-label">Phone Number</label>
-          <input class="form-input" type="tel" placeholder="+91 XXXXXXXXXX">
+          <input class="form-input" type="tel" name="Phone" placeholder="+91 XXXXXXXXXX">
         </div>
         <div class="form-group">
           <label class="form-label">Project Type</label>
-          <select class="form-select">
+          <select class="form-select" name="Project Type">
             <option value="">Select a category</option>
             <!-- <option>Wedding Film</option> -->
             <option>Commercial / Brand Film</option>
@@ -1636,9 +1641,9 @@
         </div>
         <div class="form-group">
           <label class="form-label">Tell Me About Your Project</label>
-          <textarea class="form-textarea" placeholder="Describe your project, date, location..."></textarea>
+          <textarea class="form-textarea" name="Project Details" placeholder="Describe your project, date, location..."></textarea>
         </div>
-        <button class="form-submit"><span>Send Enquiry</span></button>
+        <button class="form-submit" type="submit"><span>Send Enquiry</span></button>
       </form>
     </div>
 
@@ -1650,33 +1655,33 @@
       <h2 class="faq-heading reveal">Confused? <em>We've Got the Answers!</em></h2>
       <div class="faq-list reveal">
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">Why should we choose you?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">Why should we choose you?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>I bring a cinematic, story-first approach to every project — whether it's a commercial edit, or brand reel. My focus is on authentic emotion, clean pacing, and visuals that feel premium and personal.</p></div>
         </div>
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">How is your work different from others?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">How is your work different from others?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>Every film is edited with narrative intent, not just pretty shots. I balance aesthetics with messaging for commercial work, and build emotional arcs for weddings and events that feel cinematic rather than generic.</p></div>
         </div>
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">Do you travel for projects?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">Do you travel for projects?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>Yes, I travel across India for the right projects. Travel and accommodation are discussed transparently before confirmation and are additional to the base quote.</p></div>
         </div>
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">How are your services priced?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">How are your services priced?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>Pricing depends on project scope, deliverables, and timeline. I share a clear quote after understanding your needs — no hidden costs, and packages can be tailored for weddings, commercials, or ongoing content.</p></div>
         </div>
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">What are your delivery timelines?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">What are your delivery timelines?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>Commercial projects are typically 1–2 weeks. Brand films take 3–4 weeks after the event. Reels and short-form edits are delivered within 5–7 working days.</p></div>
         </div>
         <div class="faq-item">
-          <div class="faq-qu" onclick="toggleFaq(this)">What formats do you deliver?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-qu" onclick="toggleFaq(this)">What formats do you deliver?<span class="faq-icon" aria-hidden="true"></span></div>
           <div class="faq-an"><p>All final videos are delivered in Full HD (1080p) or 4K via Google Drive. Instagram-optimised versions are included at no extra charge.</p></div>
         </div>
       </div>
       <p class="faq-note reveal">Have more questions? Head over to our FAQs page.</p>
       <div class="faq-cta-wrap reveal">
-        <a href="#" onclick="navigateTo('contact');return false;" class="faq-know-btn">Know more</a>
+        <a href="#" onclick="navigateTo('about');return false;" class="faq-know-btn">Know more</a>
       </div>
     </div>
   </section>

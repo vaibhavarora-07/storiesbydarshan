@@ -858,3 +858,81 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+// contact page submit button pop up
+function submitContactForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      showFormPopup(true);
+      form.reset();
+    } else {
+      showFormPopup(false);
+    }
+  })
+  .catch(() => showFormPopup(false));
+}
+
+function showFormPopup(success) {
+  const popup = document.createElement('div');
+  popup.className = 'form-popup ' + (success ? 'form-popup--success' : 'form-popup--error');
+  popup.textContent = success
+    ? 'Thanks! Your enquiry has been sent.'
+    : 'Something went wrong. Please try again.';
+  document.body.appendChild(popup);
+  setTimeout(() => popup.classList.add('show'), 10);
+  setTimeout(() => {
+    popup.classList.remove('show');
+    setTimeout(() => popup.remove(), 400);
+  }, 3500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function submitBriefForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch('https://formspree.io/f/xlgqrylq', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      showFormPopup(true);
+      form.reset();
+    } else {
+      showFormPopup(false);
+    }
+  })
+  .catch(() => showFormPopup(false));
+}
