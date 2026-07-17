@@ -936,3 +936,22 @@ function submitBriefForm(e) {
   })
   .catch(() => showFormPopup(false));
 }
+
+
+
+const lazyVideos = document.querySelectorAll('.lazy-video');
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      const source = document.createElement('source');
+      source.src = video.dataset.src;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+      video.load();
+      video.play();
+      videoObserver.unobserve(video);
+    }
+  });
+});
+lazyVideos.forEach(video => videoObserver.observe(video));
