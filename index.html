@@ -166,7 +166,7 @@
 <section class="section">
   <div id="about">
     <div class="about-media reveal">
-      <img src="Images/image.jpg" alt="Darshan"/>
+      <img src="Images/image.webp" alt="Darshan"/>
     </div>
     <div class="reveal d1">
       <div class="section-tag">About Me</div>
@@ -418,7 +418,7 @@
 <section class="section">
   <div id="why">
     <div class="why-media reveal">
-      <video autoplay muted loop playsinline preload="none" poster="Images/image.png">
+      <video autoplay muted loop playsinline preload="none" poster="Images/image01.webp">
         <!-- <source src="REPLACE_WITH_WHY_VIDEO.mp4" type="video/mp4"/> -->
       </video>
     </div>
@@ -573,11 +573,13 @@
       Source: Mixkit (free) — colorful cinematic footage.
       Replace src with your own .mp4 showreel link when ready.
       The poster image shows while the video loads.
+
+      autoplay muted loop playsinline
     -->
     <video
       class="comm-hero__video"
       id="commHeroVideo"
-      autoplay muted loop playsinline
+      muted loop playsinline preload="none"
       poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1400&q=80"
     >
       <source
