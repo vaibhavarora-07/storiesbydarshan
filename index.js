@@ -125,7 +125,7 @@ function startSlideshow() {
 /* ─── NAVBAR ─── */
 let currentPage = 'home';
 
-const LOGO_LIGHT = 'light_logo_transperent_2.png';
+const LOGO_LIGHT = 'light_logo_transperent_3.png';
 const LOGO_DARK  = 'light_logo_transperent_2.png';
 
 function setNavStyle(isDark) {
@@ -955,3 +955,9 @@ const videoObserver = new IntersectionObserver((entries) => {
   });
 });
 lazyVideos.forEach(video => videoObserver.observe(video));
+
+
+
+
+
+
