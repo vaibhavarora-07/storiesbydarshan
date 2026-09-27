@@ -549,17 +549,19 @@
 
 </footer> -->
 
+
+<!--
 <div class="cinematic-footer-clip">
   <footer class="cinematic-footer" id="site-footer">
 
-    <!-- Ambient glow + grid -->
+    <!-- Ambient glow + grid --
     <div class="footer-aurora"></div>
     <!-- <div class="footer-bg-grid"></div> -->
 
-    <!-- Giant background text -->
+    <!-- Giant background text --
     <div class="footer-giant-bg-text" id="footerGiantText">DARSHAN</div>
 
-    <!-- Top marquee -->
+    <!-- Top marquee --
     <div class="footer-marquee-wrap">
       <div class="footer-marquee-track" id="footerMarquee">
         <div class="marquee-group">
@@ -579,12 +581,12 @@
       </div>
     </div>
 
-    <!-- Main content -->
+    <!-- Main content --
     <div class="footer-main" id="footerMain">
       <h2 class="footer-heading" id="footerHeading">Ready to shoot your next edit?</h2>
 
       <div class="footer-links-wrap" id="footerLinksWrap">
-        <!-- Primary pills -->
+        <!-- Primary pills --
         <div class="footer-pill-row">
           <a href="https://wa.me/918619219671" target="_blank" rel="noopener" class="footer-pill footer-pill-primary magnetic-btn">
             <svg viewBox="0 0 24 24" fill="currentColor" class="pill-icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
@@ -596,7 +598,7 @@
           </a>
         </div>
 
-        <!-- Secondary nav pills -->
+        <!-- Secondary nav pills --
         <div class="footer-pill-row footer-pill-row-secondary">
           <a href="#" class="footer-pill footer-pill-secondary magnetic-btn">Home</a>
           <a href="#works" class="footer-pill footer-pill-secondary magnetic-btn">Works</a>
@@ -607,7 +609,7 @@
       </div>
     </div>
 
-    <!-- Bottom bar -->
+    <!-- Bottom bar --
     <div class="footer-bottom-bar">
       <div class="footer-copyright">© 2026 StoriesByDarshan. All rights reserved.</div>
 
@@ -625,7 +627,355 @@
       </button>
     </div>
 
-  </footer>
+  </footer>-->
+
+  <!-- Google Fonts Import for Display & Body Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+<style>
+  /* Base Container & Scope */
+  .sbd-footer-wrapper {
+    background-color: #080808;
+    padding: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sbd-footer-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Deep Arch Card with Rich Red Gradient */
+  .sbd-footer-card {
+    background: linear-gradient(135deg, #b80d0d 0%, #880606 100%);
+    border-radius: 280px 32px 32px 280px;
+    padding: 4.5rem 3rem 1.5rem 5.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Grid Layout for Top Info Section */
+  .sbd-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 5rem;
+    max-width: 1400px;
+  }
+
+  /* Left Column - Brand Info & Reduced Font Size Tagline */
+  .sbd-footer-brand h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+    max-width: 280px;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.01em;
+  }
+
+  .sbd-footer-brand p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+  }
+
+  /* Middle Columns - Navigation Links */
+  .sbd-footer-col h3 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .sbd-footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .sbd-footer-col a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+
+  .sbd-footer-col a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 1.5px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+  }
+
+  .sbd-footer-col a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+
+  .sbd-footer-col a:hover::after {
+    width: 100%;
+  }
+
+  /* Newsletter Form & Pill Input */
+  .sbd-footer-subscribe-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.8rem;
+  }
+
+  .sbd-footer-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sbd-footer-input-wrapper:focus-within {
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+
+  .sbd-footer-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.825rem;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  .sbd-footer-input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Animated Subscribe Button */
+  .sbd-footer-submit-btn {
+    background-color: #ffffff;
+    color: #880606;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .sbd-footer-submit-btn:hover {
+    transform: scale(1.05);
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  .sbd-footer-submit-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Glowing Interactive Social Icons */
+  .sbd-footer-socials-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.6rem;
+  }
+
+  .sbd-footer-social-links {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .sbd-footer-social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .sbd-footer-social-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .sbd-footer-social-icon:hover {
+    background-color: #ffffff;
+    color: #880606;
+    transform: translateY(-4px) scale(1.1);
+    border-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .sbd-footer-social-icon:hover svg {
+    transform: scale(1.1);
+  }
+
+  /* Bottom Display Typography Block for "darshan" */
+  .sbd-footer-bottom-brand {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 0.5rem;
+    line-height: 0.8;
+    overflow: hidden;
+  }
+
+  .sbd-footer-logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 13vw, 8.5rem);
+    letter-spacing: -0.06em;
+    color: #ffffff;
+    text-transform: lowercase;
+    user-select: none;
+    display: block;
+    text-align: right;
+  }
+
+  /* Responsive Adjustments for Mobile & Tablets */
+  @media (max-width: 992px) {
+    .sbd-footer-card {
+      border-radius: 120px 24px 24px 120px;
+      padding: 3rem 2.5rem 2rem 3.5rem;
+    }
+    .sbd-footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .sbd-footer-wrapper {
+      padding: 1rem 0.5rem;
+    }
+    .sbd-footer-card {
+      border-radius: 60px 20px 20px 60px;
+      padding: 2.25rem 1.5rem 1.75rem 2.25rem;
+    }
+    .sbd-footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .sbd-footer-logo-text {
+      font-size: clamp(2.8rem, 16vw, 4.5rem);
+    }
+  }
+</style>
+
+<!-- Footer Markup -->
+<footer class="sbd-footer-wrapper">
+  <div class="sbd-footer-card">
+    
+    <!-- Upper Grid Navigation & Content -->
+    <div class="sbd-footer-grid">
+      
+      <!-- Brand & Tagline -->
+      <div class="sbd-footer-brand">
+        <h2>Crafting cinematic stories & visual experiences.</h2>
+        <p>&copy; 2026 Stories by Darshan / All Rights Reserved.</p>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="sbd-footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="sbd-footer-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#video-editing">Video Editing</a></li>
+          <li><a href="#color-grading">Color Grading</a></li>
+          <li><a href="#sound-design">Sound Design</a></li>
+          <li><a href="#direction">Creative Direction</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter & Social Section -->
+      <div>
+        <div class="sbd-footer-subscribe-title">Get the Latest</div>
+        <form onsubmit="event.preventDefault(); const btn = this.querySelector('button'); btn.textContent = 'Subscribed!'; setTimeout(() => btn.textContent = 'Subscribe', 3000);" class="sbd-footer-input-wrapper">
+          <input type="email" placeholder="Email Address" required />
+          <button type="submit" class="sbd-footer-submit-btn">Subscribe</button>
+        </form>
+
+        <div class="sbd-footer-socials-title">Follow Us</div>
+        <div class="sbd-footer-social-links">
+          <!-- Instagram -->
+          <a href="#" class="sbd-footer-social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="sbd-footer-social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="#" class="sbd-footer-social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Ultra-Bold Display Brand Name -->
+    <div class="sbd-footer-bottom-brand">
+      <span class="sbd-footer-logo-text">darshan</span>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
 </div>
 
 <script>
